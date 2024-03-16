@@ -1,29 +1,34 @@
 <header class="row p-0 m-0 container-fluid">
-    <div class="nav-container col-lg-6 col-md-12 p-0">
+    <div class="nav-container col-lg-6 col-md-12 p-3">
         <div class="nav d-flex flex-row align-items-start justify-content-between">
             <div class="p-2 m-3 order-1 order-lg-1">
                 <div class="p-1">
                     <img class="logo" src="../../../assets/img/captura logo .png" alt="">
+                    <div>
+                        <button (click)="changeLanguage('en')">En</button>
+                        <button (click)="changeLanguage('es')">Es</button>
+                        <button (click)="changeLanguage('eus')">Eus</button>
+                    </div>
                 </div>
             </div>
             <div class="p-1 m-2 nav-principal d-flex justify-content-end order-2 order-lg-2">
-                <a class="my-1 mx-2" href="#">SERVICIOS</a>
+                <a class="my-1 mx-2" href="#">{{ translations['SERVICES'] }}</a>
                 <p class="my-1">/</p>
-                <a class="my-1 mx-2" href="#">METODOLOGIA</a>
+                <a class="my-1 mx-2" href="#"> {{ translations['METHODOLOGY'] }} </a>
             </div>
         </div>
             <app-text-header></app-text-header> 
-            <div class="nav-vertical w-25 p-1">
-                <a href="#">Agua</a>
-                <a href="#">Energia</a>
-                <a href="#">Medio ambiente</a>
-                <a href="#">Urbanismo</a>
-                <a href="#">Movilidad</a>
-                <a href="#">Infraestructura</a>
+            <div class="nav-vertical p-1">
+                <a href="#">{{ translations['WATER'] }}</a>
+                <a href="#">{{ translations['ENERGY'] }}</a>
+                <a href="#">{{ translations['ENVIRONMENT'] }}</a>
+                <a href="#">{{ translations['URBANISM'] }}</a>
+                <a href="#">{{ translations['MOBILITY'] }}</a>
+                <a href="#">{{ translations['INFRASTRUCTURE'] }}</a>
             </div>
             <div class="nav-white">
-                <a class="white" href="">CONTACTO</a>
-                <a class="white" href="">EQUIPO DE TRABAJO</a>
+                <a class="white" href="">{{ translations['CONTACT'] }}</a>
+                <a class="white" href="">{{ translations['TEAM'] }}</a>
             </div>
     </div>
     

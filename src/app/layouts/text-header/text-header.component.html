@@ -1,5 +1,8 @@
 <div class="text">
-    <p>Ayudar, imaginar y hacer realidad las ideas, necesidades, sueños de personas, comunidades y organizaciones,
-        ajustados a las necesidades del territorio, de la biodiversidad y la comunidad.
+    <p>
+        @if (
+            MAIN_TEXT
+        ) { {{MAIN_TEXT | translate}}
+    }
     </p>
 </div>
