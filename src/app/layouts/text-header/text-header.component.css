@@ -1,0 +1,38 @@
+.text {
+    position: absolute;
+    width: 75%;
+    margin-left: 25px;
+    font-size: 30px;
+}
+
+
+
+@media (max-width: 992px) {
+    .text {
+        position: static;
+        width: auto;
+        left: auto;
+        transform: none;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+        position: static;
+        width: auto;
+        left: auto;
+        transform: none;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text {
+        position: static;
+        width: auto;
+        left: auto;
+        transform: none;
+        font-size: 15px;
+    }
+}

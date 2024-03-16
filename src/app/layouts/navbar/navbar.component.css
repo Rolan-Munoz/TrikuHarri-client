@@ -1,0 +1,132 @@
+header {
+    max-width: 100%;
+}
+
+.nav-container{
+    background-color: #60d2cb;
+}
+
+img {
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 992px) {
+    .logo {
+        width: 125px;
+        height: 125px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+
+.nav-principal {
+    display: flex;
+    max-height: 100px;
+}
+
+.nav-principal a, p {
+    text-decoration: none;
+    color: #012715;
+    font-weight: 100;
+}
+
+.nav-principal a:hover {
+    color: black;
+    font-weight: 200;
+}
+
+@media (max-width: 768px) {
+    .nav-principal {
+        font-size: small;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-principal {
+        font-size: x-small;
+    }
+}
+
+.white {
+    color: white;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+.nav-white {
+    
+    font-size: medium;
+}
+
+.nav-vertical {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+
+
+.nav-vertical a {
+    text-decoration: none;
+    color: #012715;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.nav-vertical a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 992px) {
+    .nav-vertical {
+        margin-top: 50px;
+    }
+}   
+
+@media (max-width: 768px) {
+    .nav-vertical {
+        margin-top: 0;
+    }
+}
+
+.white {
+    color: white;
+    font-size: medium;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
