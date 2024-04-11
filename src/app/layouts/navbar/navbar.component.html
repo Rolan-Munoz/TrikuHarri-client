@@ -30,7 +30,18 @@
                 <a class="white" href="">{{ translations['CONTACT'] }}</a>
                 <a class="white" href="">{{ translations['TEAM'] }}</a>
             </div>
+            <!-- Para pantallas grandes -->
+            <div id="news-icon" class="icon-container-big d-none d-lg-block">
+                <fa-icon class="icon-news" [icon]="faSplotch"></fa-icon>
+                <span class="icon-text">NEWS</span>
+            </div>
     </div>
     
-    <div class="col-lg-6 col-md-12 img-responsive p-0"><img src="../../../assets/img/img-header.jpg" alt=""></div>
+    <div class="col-lg-6 col-md-12 img-responsive p-0 main-img">
+        <img src="../../../assets/img/img-header.jpg" alt="">
+        <div id="news-icon" class="icon-container-small d-block d-lg-none">
+            <fa-icon class="icon-news" [icon]="faSplotch"></fa-icon>
+            <span class="icon-text">NEWS</span>
+        </div>
+    </div>
 </header>

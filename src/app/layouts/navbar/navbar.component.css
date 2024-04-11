@@ -1,10 +1,20 @@
 header {
     max-width: 100%;
+    position: relative;
 }
 
 .nav-container{
     background-color: #60d2cb;
 }
+
+
+
+@media (max-width: 992px) {
+    .main-img {
+        position: relative;
+    }
+}
+
 
 img {
     max-width: 100%;
@@ -78,6 +88,7 @@ img {
 .nav-white {
     
     font-size: medium;
+    width: 30%;
 }
 
 .nav-vertical {
@@ -120,15 +131,54 @@ img {
     font-size: medium;
 }
 
+.icon-news {
+    font-size: 150px; 
+    color: blue;
+}
 
 
 
 
+/* Para pantallas grandes */
+.icon-container-big {
+    position: absolute;
+    bottom: -10px; /* Ajusta según necesites */
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+/* Para pantallas grandes */
+.icon-container-big {
+    position: absolute;
+    bottom: -10px; /* Ajusta según necesites */
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 992px) and (min-width: 768px) {
+    .icon-container-small {
+        position: absolute;
+        top: -20%; /* Ajusta según necesites */
+        right: 25%;
+        transform: translateX(50%);
+    }
+}
 
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    .icon-container-small {
+        position: absolute;
+        top: -45%; /* Ajusta según necesites */
+        right: 25%;
+        transform: translateX(50%);
+    }
+}
 
-
-
-
-
+.icon-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
