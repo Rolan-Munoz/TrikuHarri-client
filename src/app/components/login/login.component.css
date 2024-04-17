@@ -1,0 +1,63 @@
+
+
+
+/* Estilo para las etiquetas de los campos del formulario */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los campos de entrada del formulario */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de enviar */
+button {
+    display: block;
+    justify-content: right;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de enviar cuando está deshabilitado */
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilo para los mensajes de error */
+.alert {
+    color: red;
+}
+
+/* Estilo para los mensajes de error de login */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin-top: 200px;
+}
+
+form {
+    width: 50%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 
@@ -15,5 +15,8 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'TrikuHarri';
+
+  constructor(public router: Router) { }
+
   
 }
