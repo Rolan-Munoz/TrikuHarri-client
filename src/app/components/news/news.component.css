@@ -1,0 +1,110 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenido al inicio del eje cruzado */
+    z-index: 9999;
+}
+
+.modal-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto 0 auto;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.news-card {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #230c6b; 
+    margin: 0 auto 20px auto; 
+    width: 80%;
+    color: #10458b;
+}
+
+.news-image {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    margin-right: 50px; 
+}
+
+.news-text {
+    width: 70%; 
+}
+
+.news-description {
+    max-height: 100px; 
+    overflow: hidden; 
+    transition: max-height 0.3s ease-out; 
+}
+
+.news-description.expanded {
+    max-height: 100%;
+}
+
+.news-title {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #230c6b; 
+    margin: 0 auto 20px auto;
+    width: 77%;
+}
+
+@media(max-width: 768px) {
+    .news-card {
+        width: 90%; /* Aumenta el ancho de la tarjeta para tablets */
+    }
+
+    .news-image {
+        width: 150px; /* Reduce el tamaño de la imagen para tablets */
+        height: 150px;
+        margin-right: 30px;
+    }
+}
+
+/* Estilos para pantallas de móvil */
+@media(max-width: 480px) {
+    .news-card {
+        width: 100%; /* Aumenta el ancho de la tarjeta para móviles */
+    }
+
+    .news-image {
+        width: 100px; /* Reduce aún más el tamaño de la imagen para móviles */
+        height: 100px;
+        margin-right: 30px;
+    }
+
+    .news-text {
+        width: 100%; /* Ajusta el ancho del texto para móviles */
+    }
+}
+.expand-button {
+    margin-top: 5px;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    font-size: x-small;
+}

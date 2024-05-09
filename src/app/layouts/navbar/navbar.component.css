@@ -137,22 +137,13 @@ img {
 }
 
 
-
-
 /* Para pantallas grandes */
 .icon-container-big {
     position: absolute;
     bottom: -10px; /* Ajusta según necesites */
     left: 50%;
     transform: translateX(-50%);
-}
-
-/* Para pantallas grandes */
-.icon-container-big {
-    position: absolute;
-    bottom: -10px; /* Ajusta según necesites */
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 9999;
 }
 
 /* Para pantallas medianas (tabletas) */
@@ -162,6 +153,7 @@ img {
         top: -20%; /* Ajusta según necesites */
         right: 25%;
         transform: translateX(50%);
+        z-index: 9999;
     }
 }
 
@@ -172,6 +164,7 @@ img {
         top: -45%; /* Ajusta según necesites */
         right: 25%;
         transform: translateX(50%);
+        z-index: 9999;
     }
 }
 
@@ -182,3 +175,7 @@ img {
     transform: translate(-50%, -50%);
     color: white;
 }
+
+
+
+

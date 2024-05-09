@@ -11,7 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LanguageServiceService {
 
-  private language = new BehaviorSubject<string>('es');
+  public language = new BehaviorSubject<string>('es');
   private translations = new BehaviorSubject<any>({});
 
   constructor(private http: HttpClient) {

@@ -1,0 +1,27 @@
+@if(showModal) {
+    <div class="modal">
+        <button class="close-button" (click)="closeModal()">X</button>
+        <div class="modal-wrapper">
+            <h3 class="news-title">NEWS</h3>
+            <div class="modal-content">
+                @if(news && news.length > 0) {
+                    @for(newItem of news; track newItem.id) {
+                        <div class="news-card">
+                            @if (newItem.image) {
+                                <img class="news-image" [src]="'data:image/jpeg;base64,' + newItem.image" alt="News image">
+                            }
+                            <div class="news-text">
+                                <h2>{{ newItem['title_' + languageService.language.value]}}</h2>
+                                <p>Publicado el: {{ newItem.date}}</p>
+                                <div class="news-description" [class.expanded]="newItem['expanded']">
+                                    <p>{{ newItem['content_' + languageService.language.value]}}</p>
+                                </div>
+                                <button class="expand-button" (click)="newItem['expanded'] = !newItem['expanded']">{{ newItem['expanded'] ? 'Cerrar' : 'Abrir' }}</button>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}

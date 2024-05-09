@@ -9,6 +9,7 @@
 // The changeLanguage method is used to change the language of the application. It uses the language service to change the language of the application.
 
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSplotch } from '@fortawesome/free-solid-svg-icons';
 import { LanguageServiceService } from '../../services/language-service.service';
@@ -19,7 +20,7 @@ import { TextHeaderComponent } from "../text-header/text-header.component";
     standalone: true,
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css',
-    imports: [TextHeaderComponent, FontAwesomeModule]
+    imports: [TextHeaderComponent, FontAwesomeModule, RouterModule]
 })
 export class NavbarComponent {
     translations: { [x: string]: string; } = {};
