@@ -1,13 +1,21 @@
 {
-    "SERVICES": "ZERBITZUAK",
-"METHODOLOGY": "METODOLOGIA",
+"SERVICES": "ZERBITZUAK - METODOLOGIA",
 "WATER": "URA",
 "ENERGY": "ENERGIA",
 "ENVIRONMENT": "INGURUMENA",
 "URBANISM": "HERRI-ANTOLAKETA",
 "MOBILITY": "MOBILITATEA",
 "INFRASTRUCTURE": "INFRAESTRUKTURA",
+"NEWS": "BERRIAK",
 "CONTACT": "KONTAKTUA",
 "TEAM": "TALDEA",
-"MAIN_TEXT": "Indibiduo, komunitate eta erakundeentzako ideien, beharren eta ametseten laguntza, imajinazioa eta bizirautea, lurraldearen, biodibertsitatearen eta komunitatearen beharretara egokituak."
+"MAIN_TEXT": "Indibiduo, komunitate eta erakundeentzako ideien, beharren eta ametseten laguntza, imajinazioa eta bizirautea, lurraldearen, biodibertsitatearen eta komunitatearen beharretara egokituak.",
+"WATER_TEXT": "EUS Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+"ENERGY_TEXT": "EUS Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+"ENVIRONMENT_TEXT": "EUS Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+"URBANISM_TEXT": "EUS Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+"MOBILITY_TEXT": "EUS Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+"INFRAESTRUCTURE_TEXT": "EUS Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore"
+
+
 }

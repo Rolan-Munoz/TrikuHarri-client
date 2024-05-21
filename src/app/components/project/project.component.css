@@ -1,0 +1,65 @@
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap; /* Añade esta línea */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.card-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  background-color: rgba(3, 80, 45, 0.8);
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-image-overlay {
+  position: relative;
+  width: 100%; /* Cada imagen ocupa todo el ancho del contenedor */
+  height: 400px; 
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.card-image-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.card-image-overlay:hover::after {
+  background-color: rgba(0, 0, 0, 0.5); /* Sombreado al pasar el cursor */
+}
+
+@media(max-width: 760px) {
+  .card-image-overlay {
+    height: 400px;
+  }
+  .card-title-overlay {
+    padding: 15px;
+    font-size: 15px;
+  }
+  .container-fluid {
+    align-items: flex-start;
+  }
+
+}
+
+

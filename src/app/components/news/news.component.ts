@@ -1,4 +1,3 @@
-import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { News } from '../../models/news';

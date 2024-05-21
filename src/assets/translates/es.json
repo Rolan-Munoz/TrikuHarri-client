@@ -1,13 +1,20 @@
 {
-    "SERVICES": "SERVICIOS",
-    "METHODOLOGY": "METODOLOGIA",
+    "SERVICES": "SERVICIOS - METODOLOGIA",
     "WATER": "AGUA",
     "ENERGY": "ENERGIA",
     "ENVIRONMENT": "MEDIO AMBIENTE",
     "URBANISM": "URBANISMO",
     "MOBILITY": "MOVILIDAD",
     "INFRASTRUCTURE": "INFRAESTRUCTURA",
+    "NEWS": "NOTICIAS",
     "CONTACT": "CONTACTO",
     "TEAM": "EQUIPO DE TRABAJO",
-    "MAIN_TEXT": "Ayudar, imaginar y hacer realidad las ideas, necesidades, sueños de personas, comunidades y organizaciones, ajustados a las necesidades del territorio, de la biodiversidad y la comunidad."
+    "MAIN_TEXT": "Ayudar, imaginar y hacer realidad las ideas, necesidades, sueños de personas, comunidades y organizaciones, ajustados a las necesidades del territorio, de la biodiversidad y la comunidad.",
+    "WATER_TEXT": "ES Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "ENERGY_TEXT": "ES Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "ENVIRONMENT_TEXT": "ES Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "URBANISM_TEXT": "ES Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "MOBILITY_TEXT": "ES Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "INFRAESTRUCTURE_TEXT": "ES Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore"
+
 }

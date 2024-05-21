@@ -5,6 +5,11 @@ header {
 
 .nav-container{
     background-color: #60d2cb;
+    max-width: 100%;
+}
+
+.container-fluid {
+    height: 100vh;
 }
 
 
@@ -19,38 +24,42 @@ header {
 img {
     max-width: 100%;
     min-height: 100%;
+    object-fit: cover;
 }
 
+
+
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 @media (max-width: 992px) {
     .logo {
-        width: 125px;
-        height: 125px;
+        width: 200px;
+        height: 200px;
     }
 }
 
 @media (max-width: 768px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
     .logo {
         width: 100px;
         height: 100px;
     }
 }
 
-@media (max-width: 576px) {
-    .logo {
-        width: 75px;
-        height: 75px;
-    }
-}
-
 
 .nav-principal {
-    display: flex;
     max-height: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-principal a, p {
@@ -60,8 +69,8 @@ img {
 }
 
 .nav-principal a:hover {
-    color: black;
-    font-weight: 200;
+    color: rgb(192, 185, 185);
+    font-weight: 300;
 }
 
 @media (max-width: 768px) {
@@ -78,7 +87,7 @@ img {
 
 .white {
     color: white;
-    font-size: medium;
+    font-size: small;
     display: flex;
     flex-direction: column;
     margin-left: 25px;
@@ -86,8 +95,6 @@ img {
 }
 
 .nav-white {
-    
-    font-size: medium;
     width: 30%;
 }
 
@@ -102,80 +109,79 @@ img {
 
 
 
+
 .nav-vertical a {
     text-decoration: none;
     color: #012715;
     font-weight: 200;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .nav-vertical a:hover {
     text-decoration: none;
-    color: black;
+    color: rgb(170, 163, 163);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
     .nav-vertical {
-        margin-top: 50px;
-    }
-}   
-
-@media (max-width: 768px) {
-    .nav-vertical {
+        font-size: small;
         margin-top: 0;
     }
 }
 
-.white {
-    color: white;
-    font-size: medium;
+
+.component-container {
+    /* Asegura que el contenedor ocupe el 100% de la altura de la ventana del navegador */
+    height: 100vh;
+    
+    /* Habilita el desplazamiento dentro del contenedor */
+    overflow-y: auto;
+    
+    /* Centra los componentes horizontalmente */
+    display: flex;
+    justify-content: center;
+    
+    /* Si quieres que los componentes se muestren en una columna */
+    flex-direction: column;
+    align-items: stretch;
 }
 
-.icon-news {
-    font-size: 150px; 
-    color: blue;
-}
 
 
-/* Para pantallas grandes */
-.icon-container-big {
-    position: absolute;
-    bottom: -10px; /* Ajusta según necesites */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-}
 
-/* Para pantallas medianas (tabletas) */
-@media (max-width: 992px) and (min-width: 768px) {
-    .icon-container-small {
-        position: absolute;
-        top: -20%; /* Ajusta según necesites */
-        right: 25%;
-        transform: translateX(50%);
-        z-index: 9999;
+@media (max-width: 768px) {
+    .component-container {
+        max-height: 100%;
+        padding: 0;
+        margin: 0;
     }
 }
 
-/* Para pantallas pequeñas (móviles) */
-@media (max-width: 767px) {
-    .icon-container-small {
-        position: absolute;
-        top: -45%; /* Ajusta según necesites */
-        right: 25%;
-        transform: translateX(50%);
-        z-index: 9999;
-    }
+.category-text {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 20px;
 }
 
-.icon-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.category-container{
+    margin: 25px;
+}
+
+.btn {
+    background: white;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.category-h2 {
+    background: #11a59c;
     color: white;
+    display: inline;
+    
 }
 
 
-
-
+.category-container p {
+    color: #012715;
+    font-size: 20px;
+}

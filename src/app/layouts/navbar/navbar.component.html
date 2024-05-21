@@ -1,51 +1,114 @@
-<header class="row p-0 m-0 container-fluid">
-    <div class="nav-container col-lg-6 col-md-12 p-3">
+<header #header class="row p-0 m-0 container-fluid">
+    <div #navContainer class="nav-container col-lg-5 col-md-12 p-3">
         <div class="nav d-flex flex-row align-items-start justify-content-between">
             <div class="p-2 m-3 order-1 order-lg-1">
                 <div class="p-1">
-                    <img class="logo" src="../../../assets/img/captura logo .png" alt="">
-                    <div>
-                        <button (click)="changeLanguage('en')">En</button>
-                        <button (click)="changeLanguage('es')">Es</button>
-                        <button (click)="changeLanguage('eus')">Eus</button>
-                    </div>
+                    <img (click)="selectedView = ''" [routerLink]="'/'" class="logo" src="../../../assets/img/logo_principal_es.png" alt="">
+                    
                 </div>
             </div>
             <div class="p-1 m-2 nav-principal d-flex justify-content-end order-2 order-lg-2">
                 <a class="my-1 mx-2" href="#">{{ translations['SERVICES'] }}</a>
-                <p class="my-1">/</p>
-                <a class="my-1 mx-2" href="#"> {{ translations['METHODOLOGY'] }} </a>
+                <div>
+                    <button (click)="changeLanguage('en')">En</button>
+                    <button (click)="changeLanguage('es')">Es</button>
+                    <button (click)="changeLanguage('eus')">Eus</button>
+                </div>
             </div>
         </div>
+        @if (selectedView === '' ) {
             <app-text-header></app-text-header> 
-            <div class="nav-vertical p-1">
-                <a href="#">{{ translations['WATER'] }}</a>
-                <a href="#">{{ translations['ENERGY'] }}</a>
-                <a href="#">{{ translations['ENVIRONMENT'] }}</a>
-                <a href="#">{{ translations['URBANISM'] }}</a>
-                <a href="#">{{ translations['MOBILITY'] }}</a>
-                <a href="#">{{ translations['INFRASTRUCTURE'] }}</a>
+        }
+        @if (selectedView === 'WATER') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['WATER'] }}</h2>
+                <p class="category-text">{{ translations['WATER_TEXT'] }}</p>
             </div>
-            <div class="nav-white">
-                <a class="white" href="">{{ translations['CONTACT'] }}</a>
-                <a class="white" href="">{{ translations['TEAM'] }}</a>
+        }
+        @if (selectedView === 'ENERGY') {
+            <div class="category-container">
+                <h2 class="category-h2" >{{ translations['ENERGY'] }}</h2>
+                <p class="category-text">{{ translations['ENERGY_TEXT'] }}</p>
             </div>
-            <!-- Para pantallas grandes -->
-            <div id="news-icon" class="icon-container-big d-none d-lg-block">
-                <a [routerLink]="['/news']">
-                    <fa-icon class="icon-news" [icon]="faSplotch"></fa-icon>
-                    <span class="icon-text"> NEWS</span>
-                </a>
+        }
+        @if (selectedView === 'ENVIRONMENT') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['ENVIRONMENT'] }}</h2>
+                <p class="category-text">{{ translations['ENVIRONMENT_TEXT'] }}</p>
             </div>
+        }
+        @if (selectedView === 'URBANISM') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['URBANISM'] }}</h2>
+                <p class="category-text">{{ translations['URBANISM_TEXT'] }}</p>
+            </div>
+        }
+        @if (selectedView === 'MOBILITY') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['MOBILITY'] }}</h2>
+                <p class="category-text">{{ translations['MOBILITY_TEXT'] }}</p>
+            </div>
+        }
+        @if (selectedView === 'INFRASTRUCTURE') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['INFRASTRUCTURE'] }}</h2>
+                <p class="category-text">{{ translations['INFRAESTRUCTURE_TEXT'] }}</p>
+            </div>
+        }
+            <div [style.margin-top.px]="selectedView !== '' ? 10 : null" class="nav-vertical p-1">
+                <a (click)="selectedView = 'WATER'" [routerLink]="['/water']">{{ translations['WATER'] }}</a>
+                <a (click)="selectedView = 'ENERGY'" [routerLink]="['/energy']">{{ translations['ENERGY'] }}</a>
+                <a (click)="selectedView = 'ENVIRONMENT'" [routerLink]="['/environment']">{{ translations['ENVIRONMENT'] }}</a>
+                <a (click)="selectedView = 'URBANISM'" [routerLink]="['/urbanism']">{{ translations['URBANISM'] }}</a>
+                <a (click)="selectedView = 'MOBILITY'" [routerLink]="['/mobility']">{{ translations['MOBILITY'] }}</a>
+                <a (click)="selectedView = 'INFRASTRUCTURE'" [routerLink]="['/infraestructure']">{{ translations['INFRASTRUCTURE'] }}</a>
+            </div>
+            @if (selectedView === '') {
+                <div class="nav-white">
+                    <a (click)="selectedView = ''" [routerLink]="['/news']" class="white" href="">{{ translations['NEWS'] }}</a>
+                    <a class="white" href="">{{ translations['CONTACT'] }}</a>
+                    <a class="white" href="">{{ translations['TEAM'] }}</a>
+                </div>
+            } @else {
+                <button (click)="selectedView = ''" [routerLink]="'/'" class="btn">Atras</button>
+            }
+            
+    </div>
+    <div #mainImg class="col-lg-7 col-md-12 img-responsive p-0 main-img">
+        @if (selectedView === '' ) {
+            <img src="../../../assets/img/img-header.jpg" alt="">
+        }
+        @if (selectedView === 'WATER') {
+            <div #componentContainer  class="component-container">
+                <app-water></app-water>
+            </div>
+        }
+        @if (selectedView === 'ENERGY') {
+            <div #componentContainer  class="component-container">
+                <app-energy></app-energy>
+            </div>
+        }
+        @if (selectedView === 'ENVIRONMENT') {
+            <div #componentContainer  class="component-container">
+                <app-environment></app-environment>
+            </div>
+        }
+        @if (selectedView === 'URBANISM') {
+            <div #componentContainer  class="component-container">
+                <app-urbanism></app-urbanism>
+            </div>
+        }
+        @if (selectedView === 'MOBILITY') {
+            <div #componentContainer  class="component-container">
+                <app-mobility></app-mobility>
+            </div>
+        }
+        @if (selectedView === 'INFRASTRUCTURE') {
+            <div #componentContainer  class="component-container">
+                <app-infraestructure></app-infraestructure>
+            </div>
+        }
     </div>
     
-    <div class="col-lg-6 col-md-12 img-responsive p-0 main-img">
-        <img src="../../../assets/img/img-header.jpg" alt="">
-        <div id="news-icon" class="icon-container-small d-block d-lg-none">
-            <a [routerLink]="['/news']">
-                <fa-icon class="icon-news" [icon]="faSplotch"></fa-icon>
-                <span class="icon-text"> NEWS</span>
-            </a>
-        </div>
-    </div>
+
 </header>
