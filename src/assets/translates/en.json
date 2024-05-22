@@ -1,13 +1,20 @@
 {
-    "SERVICES": "SERVICES",
-    "METHODOLOGY": "METHODOLOGY",
+    "SERVICES": "SERVICES - METHODOLOGY",
     "WATER": "WATER",
     "ENERGY": "ENERGY",
     "ENVIRONMENT": "ENVIRONMENT",
     "URBANISM": "URBANISM",
     "MOBILITY": "MOBILITY",
     "INFRASTRUCTURE": "INFRASTRUCTURE",
+    "NEWS": "NEWS",
     "CONTACT": "CONTACT",
     "TEAM": "TEAM",
-    "MAIN_TEXT": "To help, imagine, and bring to life the ideas, needs, dreams of individuals, communities, and organizations, tailored to the needs of the territory, biodiversity, and the community."
+    "MAIN_TEXT": "To help, imagine, and bring to life the ideas, needs, dreams of individuals, communities, and organizations, tailored to the needs of the territory, biodiversity, and the community.",
+    "WATER_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "ENERGY_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "ENVIRONMENT_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "URBANISM_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "MOBILITY_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "INFRAESTRUCTURE_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore"
+
 }
