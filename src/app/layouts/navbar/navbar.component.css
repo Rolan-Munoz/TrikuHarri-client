@@ -30,27 +30,27 @@ img {
 
 
 .logo {
-    width: 200px;
+    width: auto;
     height: 200px;
 }
 
 @media (max-width: 992px) {
     .logo {
-        width: 200px;
+        width: auto;
         height: 200px;
     }
 }
 
 @media (max-width: 768px) {
     .logo {
-        width: 150px;
+        width: auto;
         height: 150px;
     }
 }
 
 @media (max-width: 576px) {
     .logo {
-        width: 100px;
+        width: auto;
         height: 100px;
     }
 }
@@ -95,11 +95,20 @@ img {
 }
 
 .nav-white {
-    width: 30%;
+    width: 40%;
+}
+
+@media(max-width: 576px) {
+    .nav-white {
+        display: flex;
+        flex-direction: row;
+        font-size: xx-small;
+        width: auto;
+    }
 }
 
 .nav-vertical {
-    margin-top: 200px;
+    margin-top: 230px;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -113,7 +122,6 @@ img {
 .nav-vertical a {
     text-decoration: none;
     color: #012715;
-    font-weight: 200;
     font-size: 20px;
 }
 
@@ -122,17 +130,17 @@ img {
     color: rgb(170, 163, 163);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
     .nav-vertical {
-        font-size: small;
-        margin-top: 0;
+        margin-top: 30px;
+    }
+    .nav-vertical a {
+        font-size: 15px;
     }
 }
 
 
 .component-container {
-    /* Asegura que el contenedor ocupe el 100% de la altura de la ventana del navegador */
-    height: 100vh;
     
     /* Habilita el desplazamiento dentro del contenedor */
     overflow-y: auto;
@@ -144,6 +152,7 @@ img {
     /* Si quieres que los componentes se muestren en una columna */
     flex-direction: column;
     align-items: stretch;
+    
 }
 
 

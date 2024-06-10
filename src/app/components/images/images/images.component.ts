@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, input, OnInit, Output } from '@angular/core';
+import { Lightbox } from 'ngx-lightbox';
 import { Image } from '../../../models/image';
 import { ImageService } from '../../../services/image.service';
 
@@ -14,6 +15,7 @@ export class ImagesComponent implements OnInit {
   @Input() onlyFirstImage? = false;
   @Output() backgroundImageUrl = new EventEmitter<string>(); // Nuevo EventEmitter
   images: Image[] = [];
+
 
   constructor(private imageService: ImageService) {}
 
@@ -33,4 +35,8 @@ export class ImagesComponent implements OnInit {
       );
     }
   }
+
+  
 }
+
+

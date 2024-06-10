@@ -1,9 +1,29 @@
-
-
 @if (onlyFirstImage && images && images.length) {
     <img [src]="'data:image/jpeg;base64,' + images[0].image"  alt="Project image">
-} @else {
-    @for (image of images; track image.id) {
-        <img [src]="'data:image/jpeg;base64,' + image.image"  alt="Project image">
+    } @else {
+        <div id="carouselExampleControls" class="carousel slide carousel-container" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (image of images; track image.id;) {
+                @if ($index === 0) {
+                    <div class="carousel-item active">
+                        <img [src]="'data:image/jpeg;base64,' + image.image" class="d-block w-100 carousel-image" alt="Project image">
+                    </div>
+                } @else {
+                    <div class="carousel-item">
+                        <img [src]="'data:image/jpeg;base64,' + image.image" class="d-block w-100" alt="Project image">
+                    </div>
+                }
+            }
+</div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
     }
-}
+
+

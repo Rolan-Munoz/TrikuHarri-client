@@ -1,0 +1,28 @@
+@if(showModal) {
+    <div class="modal">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <img class="logo" src="../../../assets/img/logo-projects.png" alt="logo-trikuHarri-ingenieria"> 
+                <button class="close-button" (click)="closeModal()">X</button> 
+                @if(project) {                
+                    <app-images class="img"  [projectId]="project.id" [onlyFirstImage]="false"></app-images>
+                    <main>
+                        <div class="main-content">
+                            <h2>{{project['title_' + languageService.language.value]}}</h2>
+                            <p>{{project['description_' + languageService.language.value]}}</p>
+                            <p>{{project['content_' + languageService.language.value]}}</p>
+                        </div>
+                        <div class="aside">
+                            <p>Fecha:</p>
+                            {{project.date}}
+                            <p>Tipo actuacion:</p>
+                            <p>cliente</p>
+                            <p>presupuesto</p>
+                            <p>----------</p>
+                        </div>
+                    </main>
+                }
+            </div>
+        </div>
+    </div>
+}

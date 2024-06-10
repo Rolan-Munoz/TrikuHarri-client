@@ -9,11 +9,13 @@ import { UrbanismComponent } from './components/categories/urbanism/urbanism.com
 import { EnvironmentComponent } from './components/categories/environment/environment.component';
 import { MobilityComponent } from './components/categories/mobility/mobility.component';
 import { InfraestructureComponent } from './components/categories/infraestructure/infraestructure.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'news', component: NewsComponent},
+    {path: 'projects/:id', component: ProjectDetailsComponent},
     {path: 'projects', component: ProjectComponent},
     {path: 'water', component: WaterComponent},
     {path: 'energy', component: EnergyComponent},

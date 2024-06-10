@@ -1,4 +1,5 @@
 import { Component,  Input, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { Project } from '../../models/project';
 import { LanguageServiceService } from '../../services/language-service.service';
 import { ProjectsService } from '../../services/projects.service';
@@ -11,9 +12,9 @@ import { ImagesComponent } from '../images/images/images.component';
     standalone: true,
     templateUrl: './project.component.html',
     styleUrl: './project.component.css',
-    imports: [AppTranslateModule, ImagesComponent]
-})
-export class ProjectComponent implements OnInit{
+    imports: [AppTranslateModule, ImagesComponent, RouterModule]
+})export class ProjectComponent implements OnInit{
+
 
   projects: Project[] = [];
   currentLanguage: string;
@@ -21,7 +22,7 @@ export class ProjectComponent implements OnInit{
   @Input() categoryId: number | undefined;
   
   
-  constructor(private projectService: ProjectsService, public languageService: LanguageServiceService) {
+  constructor(private projectService: ProjectsService, public languageService: LanguageServiceService, private router: Router) {
     this.currentLanguage = this.languageService.language.value;
   }
   
@@ -31,5 +32,6 @@ export class ProjectComponent implements OnInit{
         this.projects = projects;
       });
     }
-}
+  }
+  
 }

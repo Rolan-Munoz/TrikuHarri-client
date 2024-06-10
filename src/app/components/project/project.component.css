@@ -1,5 +1,4 @@
 .container-fluid {
-  display: flex;
   flex-wrap: wrap; /* Añade esta línea */
   width: 100%;
   margin: 0 auto;

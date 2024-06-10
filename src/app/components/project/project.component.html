@@ -3,10 +3,12 @@
         @for (projectItem of projects; track projectItem.id) {
             <!-- En todos los tamaños de pantalla usa una columna que cubra todo el ancho -->
             <div class="col-12 m-0 p-0">
-                <div class="col-12 card-image-overlay">
-                    <app-images class="card-img" [projectId]="projectItem.id" [onlyFirstImage]="true" (backgroundImageUrl)="urlDeImagen=$event"></app-images>
-                    <p class="card-title-overlay">{{ projectItem['title_' + languageService.language.value] }}</p>
-                </div>
+                <a [routerLink]="['/projects', projectItem.id]">
+                    <div class="col-12 card-image-overlay">
+                        <app-images  class="card-img" [projectId]="projectItem.id" [onlyFirstImage]="true" (backgroundImageUrl)="urlDeImagen=$event"></app-images>
+                        <p class="card-title-overlay">{{ projectItem['title_' + languageService.language.value] }}</p>
+                    </div>
+                </a>
             </div>
         }
     }
