@@ -20,13 +20,15 @@ import { EnvironmentComponent } from "../../components/categories/environment/en
 import { UrbanismComponent } from "../../components/categories/urbanism/urbanism.component";
 import { MobilityComponent } from "../../components/categories/mobility/mobility.component";
 import { InfraestructureComponent } from "../../components/categories/infraestructure/infraestructure.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-navbar',
     standalone: true,
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css',
-    imports: [TextHeaderComponent, FontAwesomeModule, RouterModule, WaterComponent, EnergyComponent, EnvironmentComponent, UrbanismComponent, MobilityComponent, InfraestructureComponent]
+    imports: [TextHeaderComponent, FontAwesomeModule, RouterModule, WaterComponent, EnergyComponent, EnvironmentComponent,
+        UrbanismComponent, MobilityComponent, InfraestructureComponent, CommonModule]
 })
 export class NavbarComponent {
     
@@ -35,6 +37,7 @@ export class NavbarComponent {
 translations: { [x: string]: string; } = {};
 faSplotch = faSplotch;
 selectedView: string = '';
+
 
 constructor(private languageService: LanguageServiceService) {
 this.languageService.getTranslation().subscribe((translations: { [x: string]: string; }) => {

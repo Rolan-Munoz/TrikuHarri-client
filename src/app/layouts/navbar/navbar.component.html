@@ -10,9 +10,9 @@
             <div class="p-1 m-2 nav-principal d-flex justify-content-end order-2 order-lg-2">
                 <a class="my-1 mx-2" href="#">{{ translations['SERVICES'] }}</a>
                 <div>
-                    <button (click)="changeLanguage('en')">En</button>
-                    <button (click)="changeLanguage('es')">Es</button>
-                    <button (click)="changeLanguage('eus')">Eus</button>
+                    <button class="lang-btn" (click)="changeLanguage('en')">En</button>
+                    <button class="lang-btn" (click)="changeLanguage('es')">Es</button>
+                    <button class="lang-btn" (click)="changeLanguage('eus')">Eus</button>
                 </div>
             </div>
         </div>
@@ -55,14 +55,14 @@
                 <p class="category-text">{{ translations['INFRAESTRUCTURE_TEXT'] }}</p>
             </div>
         }
-            <div [style.margin-top.px]="selectedView !== '' ? 10 : null" class="nav-vertical p-1">
-                <a (click)="selectedView = 'WATER'" [routerLink]="['/water']">{{ translations['WATER'] }}</a>
-                <a (click)="selectedView = 'ENERGY'" [routerLink]="['/energy']">{{ translations['ENERGY'] }}</a>
-                <a (click)="selectedView = 'ENVIRONMENT'" [routerLink]="['/environment']">{{ translations['ENVIRONMENT'] }}</a>
-                <a (click)="selectedView = 'URBANISM'" [routerLink]="['/urbanism']">{{ translations['URBANISM'] }}</a>
-                <a (click)="selectedView = 'MOBILITY'" [routerLink]="['/mobility']">{{ translations['MOBILITY'] }}</a>
-                <a (click)="selectedView = 'INFRASTRUCTURE'" [routerLink]="['/infraestructure']">{{ translations['INFRASTRUCTURE'] }}</a>
-            </div>
+        <div [style.margin-top.px]="selectedView !== '' ? 10 : null" class="nav-vertical p-1">
+            <a (click)="selectedView = 'WATER'" [routerLink]="['/water']" routerLinkActive="active">{{ translations['WATER'] }}</a>
+            <a (click)="selectedView = 'ENERGY'" [routerLink]="['/energy']" routerLinkActive="active">{{ translations['ENERGY'] }}</a>
+            <a (click)="selectedView = 'ENVIRONMENT'" [routerLink]="['/environment']" routerLinkActive="active">{{ translations['ENVIRONMENT'] }}</a>
+            <a (click)="selectedView = 'URBANISM'" [routerLink]="['/urbanism']" routerLinkActive="active">{{ translations['URBANISM'] }}</a>
+            <a (click)="selectedView = 'MOBILITY'" [routerLink]="['/mobility']" routerLinkActive="active">{{ translations['MOBILITY'] }}</a>
+            <a (click)="selectedView = 'INFRASTRUCTURE'" [routerLink]="['/infraestructure']" routerLinkActive="active">{{ translations['INFRASTRUCTURE'] }}</a>
+        </div>
             @if (selectedView === '') {
                 <div class="nav-white p-1">
                     <a (click)="selectedView = ''" [routerLink]="['/news']" class="white" href="">{{ translations['NEWS'] }}</a>
