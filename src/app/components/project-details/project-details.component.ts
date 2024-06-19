@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
-import { Component, Input, input, OnInit } from '@angular/core';
+import { Component, Input, input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
 import { Project } from '../../models/project';
 import { LanguageServiceService } from '../../services/language-service.service';
 import { ProjectsService } from '../../services/projects.service';
@@ -14,11 +15,12 @@ import { ImagesComponent } from "../images/images/images.component";
     styleUrl: './project-details.component.css',
     imports: [AppTranslateModule, ImagesComponent]
 })
-export class ProjectDetailsComponent implements OnInit {
+export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
   project?: Project;
   showModal: boolean = false;
   currentLanguage: string;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private activatedRoute: ActivatedRoute, private projectService: ProjectsService, public languageService: LanguageServiceService, private location: Location) {
     this.currentLanguage = this.languageService.language.value;
@@ -44,8 +46,14 @@ export class ProjectDetailsComponent implements OnInit {
   
   closeModal() {
     this.showModal = false;
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
     this.location.back();
 }
   
+ngOnDestroy(): void {
+  this.unsubscribe$.next();
+  this.unsubscribe$.complete();
+}
 
 }

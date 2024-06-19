@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from '../../environment/environment';
 import { Image } from '../models/image';
 
@@ -24,6 +24,13 @@ export class ImageService {
   getImagesByProjectId(projectId: number): Observable<Image[]> {
     return this.http.get<Image[]>(`${this.apiUrl}/projects/${projectId}`);
   }
+
+  getImagesByNewId(newsId: number): Observable<Image[]> {
+    return this.http.get<Image[]>(`${this.apiUrl}/news/${newsId}`).pipe(
+      tap(images => console.log('Images:', images))
+    );
+  }
+  
 }
 
 

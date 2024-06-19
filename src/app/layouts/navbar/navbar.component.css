@@ -41,13 +41,13 @@ img {
 
 .logo {
     width: auto;
-    height: 200px;
+    height: 180px;
 }
 
 @media (max-width: 992px) {
     .logo {
         width: auto;
-        height: 200px;
+        height: 180px;
     }
 }
 
@@ -187,6 +187,15 @@ img {
     font-size: 25px;
     font-weight: 400;
     margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .category-text {
+        font-size: 15px;
+        font-weight: 200;
+        margin-top: 20px;
+    }
 }
 
 .category-container{

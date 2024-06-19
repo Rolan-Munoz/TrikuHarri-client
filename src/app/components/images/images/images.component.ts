@@ -23,8 +23,9 @@ export class ImagesComponent implements OnInit {
     if (this.projectId) {
       this.imageService.getImagesByProjectId(this.projectId).subscribe(
         (images: Image[]) => {
+          console.log('Imágenes cargadas:', images); // Agrega esta línea
           this.images = images;
-          if (this.onlyFirstImage && images.length > 0) {
+          if (this.onlyFirstImage && images && images.length > 0) { // Asegúrate de que images no es null
             // Emite la URL de la primera imagen
             this.backgroundImageUrl.emit('data:image/jpeg;base64,' + images[0].image);
           }
@@ -33,8 +34,11 @@ export class ImagesComponent implements OnInit {
           console.error('Error al obtener las imágenes:', error);
         }
       );
+    } else {
+      console.error('projectId no es válido');
     }
-  }
+}
+
 
   
 }

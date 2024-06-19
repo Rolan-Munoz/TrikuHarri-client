@@ -1,3 +1,5 @@
+/* news.component.css */
+
 .modal {
     position: fixed;
     top: 0;
@@ -38,69 +40,163 @@
 .news-card {
     display: flex;
     padding-bottom: 20px;
-    border-bottom: 3px solid #230c6b; 
-    margin: 0 auto 20px auto; 
+    border-bottom: 3px solid #230c6b;
+    margin: 0 auto 20px auto;
     width: 80%;
     color: #10458b;
 }
 
+.news-images {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 10px;
+    max-height: 200px; /* Establece una altura máxima por defecto */
+    transition: max-height 0.3s ease-out; /* Añade una transición suave */
+}
+
+.news-images.expanded {
+    max-height: 100%; /* Permite que las imágenes se expandan cuando la noticia está expandida */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+}
+
 .news-image {
-    width: 200px; 
-    height: 200px; 
-    object-fit: cover; 
-    margin-right: 50px; 
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
 .news-text {
-    width: 70%; 
+    width: 70%;
+    box-sizing: border-box;
 }
 
 .news-description {
-    max-height: 100px; 
-    overflow: hidden; 
-    transition: max-height 0.3s ease-out; 
+    max-height: 100px; /* Establece una altura máxima por defecto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
 .news-description.expanded {
-    max-height: 100%;
+    max-height: 100%; /* Permite que la descripción se expanda completamente */
 }
 
 .news-title {
     display: flex;
     padding-bottom: 20px;
-    border-bottom: 3px solid #230c6b; 
+    border-bottom: 3px solid #230c6b;
     margin: 0 auto 20px auto;
     width: 77%;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1000px) {
+    .modal-wrapper, .news-card {
+        width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+        max-width: 100%; /* Sobrescribe cualquier max-width predefinido */
+    }
+
     .news-card {
-        width: 90%; /* Aumenta el ancho de la tarjeta para tablets */
+        flex-direction: column; /* Cambia la dirección del flex a column */
+        align-items: center;
+    }
+
+    .news-images {
+        flex-direction: row; /* Cambia la dirección del flex a row */
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho disponible */
+        justify-content: space-evenly;
+        overflow-x: scroll; /* Habilita el desplazamiento horizontal */
+        box-sizing: border-box; /* Añade box-sizing */
+        padding: 0; /* Resetea el relleno */
+        margin: 0; /* Resetea los márgenes */
+        margin-right: 15px;
     }
 
     .news-image {
         width: 150px; /* Reduce el tamaño de la imagen para tablets */
         height: 150px;
-        margin-right: 30px;
+    }
+    
+    .news-text {
+        text-align: center; /* Centra el texto */
+        margin: 0 auto;
+        box-sizing: border-box; /* Añade box-sizing */
+    }
+}
+
+@media(max-width: 768px) {
+    .modal-wrapper, .news-card {
+        width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+        max-width: 100%; /* Sobrescribe cualquier max-width predefinido */
+    }
+
+    .news-card {
+        flex-direction: column; /* Cambia la dirección del flex a column */
+        align-items: center;
+    }
+
+    .news-images {
+        flex-direction: row; /* Cambia la dirección del flex a row */
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho disponible */
+        justify-content: space-evenly;
+        overflow-x: scroll; /* Habilita el desplazamiento horizontal */
+        box-sizing: border-box; /* Añade box-sizing */
+        padding: 0; /* Resetea el relleno */
+        margin: 0; /* Resetea los márgenes */
+    }
+
+    .news-image {
+        width: 150px; /* Reduce el tamaño de la imagen para tablets */
+        height: 150px;
+        margin-right: 5px;
+    }
+    
+    .news-text {
+        text-align: center; /* Centra el texto */
+        margin: 0 auto;
+        box-sizing: border-box; /* Añade box-sizing */
     }
 }
 
 /* Estilos para pantallas de móvil */
 @media(max-width: 480px) {
+    .modal-wrapper, .news-card {
+        width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+        max-width: 100%; /* Sobrescribe cualquier max-width predefinido */
+    }
+
     .news-card {
-        width: 100%; /* Aumenta el ancho de la tarjeta para móviles */
+        flex-direction: column; /* Cambia la dirección del flex a column */
+        align-items: center;
+    }
+
+    .news-images {
+        flex-direction: row; /* Cambia la dirección del flex a row */
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho disponible */
+        justify-content: space-evenly;
+        overflow-x: scroll; /* Habilita el desplazamiento horizontal */
+        box-sizing: border-box; /* Añade box-sizing */
+        padding: 0; /* Resetea el relleno */
+        margin: 0; /* Resetea los márgenes */
     }
 
     .news-image {
         width: 100px; /* Reduce aún más el tamaño de la imagen para móviles */
         height: 100px;
-        margin-right: 30px;
+        margin-right: 5px;
     }
 
     .news-text {
-        width: 100%; /* Ajusta el ancho del texto para móviles */
+        text-align: center; /* Centra el texto */
+        margin: 0 auto;
+        box-sizing: border-box; /* Añade box-sizing */
     }
 }
+
+
+
+
 .expand-button {
     margin-top: 5px;
     border: none;

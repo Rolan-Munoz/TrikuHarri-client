@@ -1,3 +1,4 @@
+<!-- news.component.html -->
 @if(showModal) {
     <div class="modal">
         <button class="close-button" (click)="closeModal()">X</button>
@@ -7,14 +8,18 @@
                 @if(news && news.length > 0) {
                     @for(newItem of news; track newItem.id) {
                         <div class="news-card">
-                            @if (newItem.image) {
-                                <img class="news-image" [src]="'data:image/jpeg;base64,' + newItem.image" alt="News image">
-                            }
+                            <div class="news-images" [class.expanded]="newItem['expanded']">
+                                @if (images[newItem.id]) {
+                                    @for(image of images[newItem.id]; track image.id) {
+                                        <img class="news-image" [src]="'data:image/jpeg;base64,' + image.image" alt="News image">
+                                    }
+                                }
+                            </div>
                             <div class="news-text">
                                 <h2>{{ newItem['title_' + languageService.language.value]}}</h2>
-                                <p>Publicado el: {{ newItem.date}}</p>
+                                <p>Publicado el: {{ newItem.date }}</p>
                                 <div class="news-description" [class.expanded]="newItem['expanded']">
-                                    <p>{{ newItem['content_' + languageService.language.value]}}</p>
+                                    <p>{{ newItem['content_' + languageService.language.value] }}</p>
                                 </div>
                                 <button class="expand-button" (click)="newItem['expanded'] = !newItem['expanded']">{{ newItem['expanded'] ? 'Cerrar' : 'Abrir' }}</button>
                             </div>

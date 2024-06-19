@@ -1,5 +1,5 @@
 .carousel-item {
-    height: 20%;
+    height: 15%;
     object-fit: cover; /* Esto asegura que las imágenes se redimensionen correctamente */
 }
 
