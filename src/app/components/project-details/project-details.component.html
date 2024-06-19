@@ -2,8 +2,11 @@
     <div class="modal">
         <div class="modal-wrapper">
             <div class="modal-content">
-                <img class="logo" src="../../../assets/img/logo-projects.png" alt="logo-trikuHarri-ingenieria"> 
-                <button class="close-button" (click)="closeModal()">X</button> 
+                <div class="header">
+                    <img class="logo" src="../../../assets/img/logo-projects.png" alt="logo-trikuHarri-ingenieria"> 
+                    <button class="close-button" (click)="closeModal()">X</button> 
+                </div>
+                
                 @if(project) {                
                     <app-images class="img"  [projectId]="project.id" [onlyFirstImage]="false"></app-images>
                     <main>
@@ -15,9 +18,9 @@
                         <div class="aside">
                             <p>Fecha:</p>
                             {{project.date}}
-                            <p>Tipo actuacion:</p>
-                            <p>cliente</p>
-                            <p>presupuesto</p>
+                            <p>{{translations['CLIENT_PROJECTDETAILS']}}</p>
+                            <p>{{translations['ACTION_PROJECTDETAILS']}}</p>
+                            <p>{{translations['BUDGET_PROJECTDETAILS']}}</p>
                             <p>----------</p>
                         </div>
                     </main>

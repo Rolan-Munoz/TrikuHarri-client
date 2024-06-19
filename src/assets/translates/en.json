@@ -15,6 +15,9 @@
     "ENVIRONMENT_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
     "URBANISM_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
     "MOBILITY_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
-    "INFRAESTRUCTURE_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore"
+    "INFRAESTRUCTURE_TEXT": "EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto vitae eos odio, nemo quae tenetur repellat voluptatibus, recusandae molestias at dicta, possimus est non quod? Aspernatur dolorem totam labore",
+    "CLIENT_PROJECTDETAILS": "Customer: ",
+    "ACTION_PROJECTDETAILS": "Type of Action:",
+    "BUDGET_PROJECTDETAILS": "Budget: "
 
 }

@@ -21,9 +21,13 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   showModal: boolean = false;
   currentLanguage: string;
   private unsubscribe$ = new Subject<void>();
+  translations: { [x: string]: string; } = {};
 
   constructor(private activatedRoute: ActivatedRoute, private projectService: ProjectsService, public languageService: LanguageServiceService, private location: Location) {
     this.currentLanguage = this.languageService.language.value;
+    this.languageService.getTranslation().subscribe((translations: { [x: string]: string; }) => {
+      this.translations = translations;
+  });
   }
 
   ngOnInit(): void {
@@ -43,6 +47,11 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
       console.error('id no valido');
     }
   }
+
+  changeLanguage(language: string) {
+    this.languageService.changeLanguage(language);
+    console.log('Language changed to: ' + language);
+    }
   
   closeModal() {
     this.showModal = false;
