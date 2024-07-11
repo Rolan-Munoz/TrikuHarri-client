@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Input, input, OnInit, Output } from '@angular/core';
-import { Lightbox } from 'ngx-lightbox';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Image } from '../../../models/image';
 import { ImageService } from '../../../services/image.service';
-
 @Component({
   selector: 'app-images',
   standalone: true,
@@ -42,5 +41,4 @@ export class ImagesComponent implements OnInit {
 
   
 }
-
 

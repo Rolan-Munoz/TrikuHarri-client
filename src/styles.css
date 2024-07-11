@@ -17,15 +17,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Mono', monospace;
 } 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho y alto */
-}
-
-
 body {
     font-family: 'Roboto', sans-serif !important; 
     margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho y alto */
     background-color: #60d2cb !important;
 }

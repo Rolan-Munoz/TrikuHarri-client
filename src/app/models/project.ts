@@ -10,6 +10,9 @@ export interface Project {
     content_en: string;
     content_eus: string;
     date: string;
+    client: string;
+    action: string;
+    budget: string;
     video?: any;
     imageIds: number[];
     [key: string]: any;

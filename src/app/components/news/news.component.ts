@@ -6,13 +6,19 @@ import { ImageService } from '../../services/image.service';
 import { LanguageServiceService } from '../../services/language-service.service';
 import { NewsService } from '../../services/news.service';
 import { AppTranslateModule } from "../../utils/app-translatate.module";
+import { DatePipe } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+registerLocaleData(localeEs, 'es');
 
 @Component({
     selector: 'app-news',
     standalone: true,
     templateUrl: './news.component.html',
     styleUrls: ['./news.component.css'],
-    imports: [AppTranslateModule]
+    imports: [AppTranslateModule],
+    providers: [DatePipe]
 })
 export class NewsComponent implements OnInit {
 
@@ -21,14 +27,14 @@ export class NewsComponent implements OnInit {
   showModal: boolean = false;
   currentLanguage: string;
 
-  constructor(private newsService: NewsService, private router: Router, public languageService: LanguageServiceService, private imageService: ImageService) { 
+  constructor(private datePipe: DatePipe, private newsService: NewsService, private router: Router, public languageService: LanguageServiceService, private imageService: ImageService) { 
     this.currentLanguage = this.languageService.language.value;
   }
 
   ngOnInit(): void {
     this.showModal = true;
     this.newsService.getAllNews().subscribe((news: News[]) => {
-      this.news = news.map(item => ({ ...item, expanded: false }));
+      this.news = news.map(item => ({ ...item, expanded: false, formattedDate: this.datePipe.transform(item.date, 'fullDate', 'es') }));
       this.loadAllImages(); // Llama al método para cargar todas las imágenes
     });
   }

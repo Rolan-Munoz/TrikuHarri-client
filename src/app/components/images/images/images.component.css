@@ -15,3 +15,22 @@
     }
     
 }
+
+.modal.fade {
+    z-index: 10000; /* Asegúrate de que este valor es mayor que el z-index del modal del proyecto */
+    background-color: rgba(26, 6, 6, 0.596); /* Fondo semitransparente */
+}
+
+
+
+.modal-content {
+    background-color: transparent; /* Fondo transparente */
+    border: none;
+}
+
+.modal-body {
+    display: flex; /* Centra la imagen en la pantalla */
+    justify-content: center;
+    align-items: center;
+}
+

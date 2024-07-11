@@ -1,0 +1,23 @@
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.main-team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.text  {
+    text-align: center;
+}

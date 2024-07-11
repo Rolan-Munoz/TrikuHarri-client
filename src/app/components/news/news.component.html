@@ -1,32 +1,37 @@
 <!-- news.component.html -->
-@if(showModal) {
-    <div class="modal">
-        <button class="close-button" (click)="closeModal()">X</button>
-        <div class="modal-wrapper">
-            <h3 class="news-title">NEWS</h3>
-            <div class="modal-content">
-                @if(news && news.length > 0) {
-                    @for(newItem of news; track newItem.id) {
-                        <div class="news-card">
-                            <div class="news-images" [class.expanded]="newItem['expanded']">
-                                @if (images[newItem.id]) {
-                                    @for(image of images[newItem.id]; track image.id) {
-                                        <img class="news-image" [src]="'data:image/jpeg;base64,' + image.image" alt="News image">
-                                    }
-                                }
-                            </div>
-                            <div class="news-text">
-                                <h2>{{ newItem['title_' + languageService.language.value]}}</h2>
-                                <p>Publicado el: {{ newItem.date }}</p>
-                                <div class="news-description" [class.expanded]="newItem['expanded']">
-                                    <p>{{ newItem['content_' + languageService.language.value] }}</p>
+@defer {
+    @if(showModal) {
+        <div class="modal">
+            <button class="close-button" (click)="closeModal()">X</button>
+            <div class="modal-wrapper">
+                <h3 class="news-title">NEWS</h3>
+                <div class="modal-content">
+                    @if(news && news.length > 0) {
+                        @defer {
+                            @for(newItem of news; track newItem.id) {
+                                <div class="news-card">
+                                    <div class="news-images" [class.expanded]="newItem['expanded']">
+                                        @if (images[newItem.id]) {
+                                            @for(image of images[newItem.id]; track image.id) {
+                                                <img class="news-image" [src]="'data:image/jpeg;base64,' + image.image" alt="News image">
+                                            }
+                                        }
+                                    </div>
+                                    <div class="news-text">
+                                        <h2>{{ newItem['title_' + languageService.language.value]}}</h2>
+                                        <p>Publicado el: {{ newItem['formattedDate'] }}</p>
+                                        <div class="news-description" [class.expanded]="newItem['expanded']">
+                                            <p>{{ newItem['content_' + languageService.language.value] }}</p>
+                                        </div>
+                                        <button class="expand-button" (click)="newItem['expanded'] = !newItem['expanded']">{{ newItem['expanded'] ? 'Cerrar' : 'Abrir' }}</button>
+                                    </div>
                                 </div>
-                                <button class="expand-button" (click)="newItem['expanded'] = !newItem['expanded']">{{ newItem['expanded'] ? 'Cerrar' : 'Abrir' }}</button>
-                            </div>
-                        </div>
+                            }
+                        }
                     }
-                }
+                </div>
             </div>
         </div>
-    </div>
+    }
 }
+

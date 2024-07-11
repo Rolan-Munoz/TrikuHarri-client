@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewsComponent } from './components/news/news.component';
 import { ProjectComponent } from './components/project/project.component';
@@ -10,10 +9,13 @@ import { EnvironmentComponent } from './components/categories/environment/enviro
 import { MobilityComponent } from './components/categories/mobility/mobility.component';
 import { InfraestructureComponent } from './components/categories/infraestructure/infraestructure.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { TeamComponent } from './components/team/team.component';
+import { MetodologyComponent } from './components/metodology/metodology.component';
+
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
-    {path: 'dashboard', component: DashboardComponent},
     {path: 'news', component: NewsComponent},
     {path: 'projects/:id', component: ProjectDetailsComponent},
     {path: 'projects', component: ProjectComponent},
@@ -22,5 +24,8 @@ export const routes: Routes = [
     {path: 'urbanism', component: UrbanismComponent},
     {path: 'environment', component: EnvironmentComponent},
     {path: 'mobility', component: MobilityComponent},
-    {path: 'infraestructure', component: InfraestructureComponent}
+    {path: 'infraestructure', component: InfraestructureComponent},
+    {path: 'contact', component: ContactComponent},
+    {path: 'team', component: TeamComponent},
+    {path: 'metodology', component: MetodologyComponent}
 ];

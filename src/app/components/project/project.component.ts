@@ -1,4 +1,4 @@
-import { Component,  Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Project } from '../../models/project';
 import { LanguageServiceService } from '../../services/language-service.service';
@@ -7,25 +7,26 @@ import { AppTranslateModule } from '../../utils/app-translatate.module';
 import { ImagesComponent } from '../images/images/images.component';
 
 
+
+
+
 @Component({
-    selector: 'app-project',
-    standalone: true,
-    templateUrl: './project.component.html',
-    styleUrl: './project.component.css',
-    imports: [AppTranslateModule, ImagesComponent, RouterModule]
-})export class ProjectComponent implements OnInit{
-
-
+  selector: 'app-project',
+  standalone: true,
+  templateUrl: './project.component.html',
+  styleUrls: ['./project.component.css'],
+  imports: [AppTranslateModule, RouterModule, ImagesComponent]
+})
+export class ProjectComponent implements OnInit {
   projects: Project[] = [];
   currentLanguage: string;
-  urlDeImagen: string | undefined; 
+  urlDeImagen: string | undefined;
   @Input() categoryId: number | undefined;
-  
-  
+
   constructor(private projectService: ProjectsService, public languageService: LanguageServiceService, private router: Router) {
     this.currentLanguage = this.languageService.language.value;
   }
-  
+
   ngOnInit(): void {
     if (this.categoryId) {
       this.projectService.getAllProjectsByCategory(this.categoryId).subscribe((projects: Project[]) => {
@@ -33,5 +34,8 @@ import { ImagesComponent } from '../images/images/images.component';
       });
     }
   }
-  
+
+  trackByProjectId(index: number, project: Project): number {
+    return project.id;
+  }
 }

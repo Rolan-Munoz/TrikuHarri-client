@@ -8,10 +8,8 @@
 // Constructor is used to inject the language service into the component. It uses the language service to get the translations from the server.
 // The changeLanguage method is used to change the language of the application. It uses the language service to change the language of the application.
 
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSplotch } from '@fortawesome/free-solid-svg-icons';
 import { LanguageServiceService } from '../../services/language-service.service';
 import { TextHeaderComponent } from "../text-header/text-header.component";
 import { WaterComponent } from "../../components/categories/water/water.component";
@@ -21,21 +19,22 @@ import { UrbanismComponent } from "../../components/categories/urbanism/urbanism
 import { MobilityComponent } from "../../components/categories/mobility/mobility.component";
 import { InfraestructureComponent } from "../../components/categories/infraestructure/infraestructure.component";
 import { CommonModule } from '@angular/common';
+import { TeamComponent } from "../../components/team/team.component";
+import { MetodologyComponent } from "../../components/metodology/metodology.component";
 
 @Component({
     selector: 'app-navbar',
     standalone: true,
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css',
-    imports: [TextHeaderComponent, FontAwesomeModule, RouterModule, WaterComponent, EnergyComponent, EnvironmentComponent,
-        UrbanismComponent, MobilityComponent, InfraestructureComponent, CommonModule]
+    imports: [TextHeaderComponent, RouterModule, WaterComponent, EnergyComponent, EnvironmentComponent,
+        UrbanismComponent, MobilityComponent, InfraestructureComponent, CommonModule, TeamComponent, MetodologyComponent]
 })
 export class NavbarComponent {
     
     
 
 translations: { [x: string]: string; } = {};
-faSplotch = faSplotch;
 selectedView: string = '';
 
 

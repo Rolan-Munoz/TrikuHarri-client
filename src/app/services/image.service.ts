@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { environment } from '../../environment/environment';
 import { Image } from '../models/image';
 
@@ -8,13 +8,14 @@ import { Image } from '../models/image';
   providedIn: 'root'
 })
 export class ImageService {
-
   private apiUrl = environment.urlApi + 'images';
+  private imageIdSource = new Subject<number>();
+  public imageId$ = this.imageIdSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  getImageById(id: number): Observable<Image> {
-    return this.http.get<Image>(`${this.apiUrl}/${id}`);
+  getImageById(id: number): Observable<Blob> {
+    return this.http.get<Blob>(`${this.apiUrl}/${id}`);
   }
 
   getAllImages(): Observable<Image[]> {
@@ -30,7 +31,8 @@ export class ImageService {
       tap(images => console.log('Images:', images))
     );
   }
-  
+
+  setImageId(id: number): void {
+    this.imageIdSource.next(id);
+  }
 }
-
-
