@@ -1,0 +1,91 @@
+<form class="container" [formGroup]="newForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="title_es">Título (ES):</label>
+        <input id="title_es" type="text" formControlName="title_es" required>
+        @if (newForm.controls['title_es'].errors && newForm.controls['title_es'].invalid && (newForm.controls['title_es'].dirty || newForm.controls['title_es'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['title_es'].errors['required']) {
+                    Título en español es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="title_en">Título (EN):</label>
+        <input id="title_en" type="text" formControlName="title_en" required>
+        @if (newForm.controls['title_en'].errors && newForm.controls['title_en'].invalid && (newForm.controls['title_en'].dirty || newForm.controls['title_en'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['title_en'].errors['required']) {
+                    Título en inglés es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="title_eus">Título (EUS):</label>
+        <input id="title_eus" type="text" formControlName="title_eus" required>
+        @if (newForm.controls['title_eus'].errors && newForm.controls['title_eus'].invalid && (newForm.controls['title_eus'].dirty || newForm.controls['title_eus'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['title_eus'].errors['required']) {
+                    Título en euskera es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="content_es">Contenido (ES):</label>
+        <textarea id="content_es" formControlName="content_es" required></textarea>
+        @if (newForm.controls['content_es'].errors && newForm.controls['content_es'].invalid && (newForm.controls['content_es'].dirty || newForm.controls['content_es'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['content_es'].errors['required']) {
+                    Contenido en español es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="content_en">Contenido (EN):</label>
+        <textarea id="content_en" formControlName="content_en" required></textarea>
+        @if (newForm.controls['content_en'].errors && newForm.controls['content_en'].invalid && (newForm.controls['content_en'].dirty || newForm.controls['content_en'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['content_en'].errors['required']) {
+                    Contenido en inglés es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="content_eus">Contenido (EUS):</label>
+        <textarea id="content_eus" formControlName="content_eus" required></textarea>
+        @if (newForm.controls['content_eus'].errors && newForm.controls['content_eus'].invalid && (newForm.controls['content_eus'].dirty || newForm.controls['content_eus'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['content_eus'].errors['required']) {
+                    Contenido en euskera es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="date">Fecha:</label>
+        <input id="date" type="date" formControlName="date" required>
+        @if (newForm.controls['date'].errors && newForm.controls['date'].invalid && (newForm.controls['date'].dirty || newForm.controls['date'].touched)) {
+            <div class="alert">
+                @if (newForm.controls['date'].errors['required']) {
+                    Fecha es requerida.
+                }
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn-submit" [disabled]="!newForm.valid">Crear Noticia</button>
+</form>
+
+@if (createdNewsId) {
+    <app-upload-images [entityId]="createdNewsId" [entityType]="'news'"></app-upload-images>
+}

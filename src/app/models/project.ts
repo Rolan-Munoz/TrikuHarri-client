@@ -15,6 +15,7 @@ export interface Project {
     budget: string;
     video?: any;
     imageIds: number[];
+    categoryIds: number[];
     [key: string]: any;
 
 }

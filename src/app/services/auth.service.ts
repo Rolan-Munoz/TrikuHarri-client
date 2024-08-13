@@ -18,7 +18,7 @@ export class AuthService {
   login(credentials: LoginRequest): Observable<any> {
     return this.http.post<any>(environment.urlApi + 'auth/login', credentials).pipe(
       tap((response) => {
-        this.token = response.accesToken;
+        this.token = response.accessToken;
         if(this.token) {
           sessionStorage.setItem('token', this.token)
         }
@@ -28,12 +28,17 @@ export class AuthService {
   logout(): void {
     this.token = null;
     sessionStorage.removeItem("token");
+    sessionStorage.removeItem("authToken")
     this.router.navigate(['/login']);
 
   }
 
   get userToken(): string | null {
     return this.token;
+  }
+
+  isAuthenticated(): boolean {
+    return !!this.userToken;
   }
 
   

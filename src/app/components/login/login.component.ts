@@ -44,7 +44,7 @@ export class LoginComponent{
         },
         complete: () => {
           console.info('Login suscessfully');
-          this.router.navigateByUrl('/dashboard');
+          this.router.navigateByUrl('/admin/dashboard');
           this.loginForm.reset();
         }
       });

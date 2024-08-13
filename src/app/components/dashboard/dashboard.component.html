@@ -1,0 +1,37 @@
+<main>
+    <div class="button-container">
+        <button class="btn" (click)="onClickProjects()">Nuevo Proyecto</button>
+        <button class="btn" (click)="onClickNews()">Nueva Noticia</button>
+        <button class="btn" (click)="logout()">Cerrar sesión</button>
+    </div>
+
+    <div class="lists-container">
+        <div class="list">
+            <h2>Lista de Noticias</h2>
+            @if (newsList.length > 0) {
+                @for (newsItem of newsList; track $index) {
+                    <div class="news-item">
+                        <h3>{{ newsItem['title_es'] }}</h3>
+                        <button class="btn-delete" (click)="deleteNews(newsItem.id)">Eliminar</button>
+                    </div>
+                }
+            } @else {
+                <p>No hay noticias para mostrar.</p>
+            }
+        </div>
+
+        <div class="list">
+            <h2>Lista de Proyectos</h2>
+            @if (projectList.length > 0) {
+                @for (projectItem of projectList; track $index) {
+                    <div class="news-item">
+                        <h3>{{ projectItem['title_es'] }}</h3>
+                        <button class="btn-delete" (click)="deleteProjects(projectItem.id)">Eliminar</button>
+                    </div>
+                }
+            } @else {
+                <p>No hay proyectos para mostrar.</p>
+            }
+        </div>
+    </div>
+</main>

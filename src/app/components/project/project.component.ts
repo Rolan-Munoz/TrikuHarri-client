@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Project } from '../../models/project';
@@ -15,7 +16,7 @@ import { ImagesComponent } from '../images/images/images.component';
   standalone: true,
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css'],
-  imports: [AppTranslateModule, RouterModule, ImagesComponent]
+  imports: [AppTranslateModule, RouterModule, ImagesComponent, NgStyle]
 })
 export class ProjectComponent implements OnInit {
   projects: Project[] = [];

@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { environment } from '../../environment/environment';
 import { Image } from '../models/image';
 
@@ -9,10 +9,20 @@ import { Image } from '../models/image';
 })
 export class ImageService {
   private apiUrl = environment.urlApi + 'images';
-  private imageIdSource = new Subject<number>();
-  public imageId$ = this.imageIdSource.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
+  uploadImageToNews(newsId: number, image: File): Observable<number> {
+    const formData = new FormData();
+    formData.append('image', image);
+    return this.http.post<number>(`${this.apiUrl}/news/${newsId}/save`, formData);
+  }
+
+  uploadImageToProject(projectId: number, image: File): Observable<number> {
+    const formData = new FormData();
+    formData.append('image', image);
+    return this.http.post<number>(`${this.apiUrl}/projects/${projectId}/save`, formData);
+  }
 
   getImageById(id: number): Observable<Blob> {
     return this.http.get<Blob>(`${this.apiUrl}/${id}`);
@@ -27,12 +37,6 @@ export class ImageService {
   }
 
   getImagesByNewId(newsId: number): Observable<Image[]> {
-    return this.http.get<Image[]>(`${this.apiUrl}/news/${newsId}`).pipe(
-      tap(images => console.log('Images:', images))
-    );
-  }
-
-  setImageId(id: number): void {
-    this.imageIdSource.next(id);
+    return this.http.get<Image[]>(`${this.apiUrl}/news/${newsId}`);
   }
 }

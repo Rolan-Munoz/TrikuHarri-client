@@ -1,0 +1,180 @@
+<form class="container" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="title_es">Título (ES):</label>
+        <input id="title_es" type="text" formControlName="title_es" required>
+        @if (projectForm.controls['title_es'].errors && projectForm.controls['title_es'].invalid && (projectForm.controls['title_es'].dirty || projectForm.controls['title_es'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['title_es'].errors['required']) {
+                    Título en español es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="title_en">Título (EN):</label>
+        <input id="title_en" type="text" formControlName="title_en" required>
+        @if (projectForm.controls['title_en'].errors && projectForm.controls['title_en'].invalid && (projectForm.controls['title_en'].dirty || projectForm.controls['title_en'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['title_en'].errors['required']) {
+                    Título en inglés es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="title_eus">Título (EUS):</label>
+        <input id="title_eus" type="text" formControlName="title_eus" required>
+        @if (projectForm.controls['title_eus'].errors && projectForm.controls['title_eus'].invalid && (projectForm.controls['title_eus'].dirty || projectForm.controls['title_eus'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['title_eus'].errors['required']) {
+                    Título en euskera es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="description_es">Descripción (ES):</label>
+        <textarea id="description_es" formControlName="description_es" required></textarea>
+        @if (projectForm.controls['description_es'].errors && projectForm.controls['description_es'].invalid && (projectForm.controls['description_es'].dirty || projectForm.controls['description_es'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['description_es'].errors['required']) {
+                    Descripción en español es requerida.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="description_en">Descripción (EN):</label>
+        <textarea id="description_en" formControlName="description_en" required></textarea>
+        @if (projectForm.controls['description_en'].errors && projectForm.controls['description_en'].invalid && (projectForm.controls['description_en'].dirty || projectForm.controls['description_en'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['description_en'].errors['required']) {
+                    Descripción en inglés es requerida.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="description_eus">Descripción (EUS):</label>
+        <textarea id="description_eus" formControlName="description_eus" required></textarea>
+        @if (projectForm.controls['description_eus'].errors && projectForm.controls['description_eus'].invalid && (projectForm.controls['description_eus'].dirty || projectForm.controls['description_eus'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['description_eus'].errors['required']) {
+                    Descripción en euskera es requerida.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="content_es">Contenido (ES):</label>
+        <textarea id="content_es" formControlName="content_es" required></textarea>
+        @if (projectForm.controls['content_es'].errors && projectForm.controls['content_es'].invalid && (projectForm.controls['content_es'].dirty || projectForm.controls['content_es'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['content_es'].errors['required']) {
+                    Contenido en español es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="content_en">Contenido (EN):</label>
+        <textarea id="content_en" formControlName="content_en" required></textarea>
+        @if (projectForm.controls['content_en'].errors && projectForm.controls['content_en'].invalid && (projectForm.controls['content_en'].dirty || projectForm.controls['content_en'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['content_en'].errors['required']) {
+                    Contenido en inglés es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="content_eus">Contenido (EUS):</label>
+        <textarea id="content_eus" formControlName="content_eus" required></textarea>
+        @if (projectForm.controls['content_eus'].errors && projectForm.controls['content_eus'].invalid && (projectForm.controls['content_eus'].dirty || projectForm.controls['content_eus'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['content_eus'].errors['required']) {
+                    Contenido en euskera es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="date">Fecha:</label>
+        <input id="date" type="date" formControlName="date" required>
+        @if (projectForm.controls['date'].errors && projectForm.controls['date'].invalid && (projectForm.controls['date'].dirty || projectForm.controls['date'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['date'].errors['required']) {
+                    Fecha es requerida.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="client">Cliente:</label>
+        <input id="client" type="text" formControlName="client" required>
+        @if (projectForm.controls['client'].errors && projectForm.controls['client'].invalid && (projectForm.controls['client'].dirty || projectForm.controls['client'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['client'].errors['required']) {
+                    Cliente es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="action">Acción:</label>
+        <input id="action" type="text" formControlName="action" required>
+        @if (projectForm.controls['action'].errors && projectForm.controls['action'].invalid && (projectForm.controls['action'].dirty || projectForm.controls['action'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['action'].errors['required']) {
+                    Acción es requerida.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="budget">Presupuesto:</label>
+        <input id="budget" type="text" formControlName="budget" required>
+        @if (projectForm.controls['budget'].errors && projectForm.controls['budget'].invalid && (projectForm.controls['budget'].dirty || projectForm.controls['budget'].touched)) {
+            <div class="alert">
+                @if (projectForm.controls['budget'].errors['required']) {
+                    Presupuesto es requerido.
+                }
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label>Categorías:</label>
+        <div formArrayName="categories">
+            @for (category of categories; track $index) {
+                <div class="checkbox-group">
+                    <input type="checkbox" [formControlName]="$index">
+                    <label>{{ category.category }}</label>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="video">Video:</label>
+        <input id="video" type="file" (change)="onFileChange($event)">
+    </div>
+
+    <button type="submit" class="btn-submit" [disabled]="!projectForm.valid">Crear Proyecto</button>
+</form>
+
+@if (createdProjectId) {
+    <app-upload-images [entityId]="createdProjectId" [entityType]="'project'"></app-upload-images>
+}

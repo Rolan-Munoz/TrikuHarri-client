@@ -16,12 +16,12 @@
     } @else {
         <div id="carouselExampleControls" class="carousel slide carousel-container" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @for (image of images; track image.id;) {
+                @for ( image of images; track image.id) {
                     @defer {
                         <div class="carousel-item" [class.active]="($index === 0)">
-                            <img [src]="'data:image/jpeg;base64,' + image.image" class="d-block w-100 carousel-image" alt="Project image" data-bs-toggle="modal" [attr.data-bs-target]="'#modal' + $index">
+                            <img [src]="'data:image/jpeg;base64,' + image.image" class="d-block w-100 carousel-image" alt="Project image" data-bs-toggle="modal" [attr.data-bs-target]="'#modal' + image.id">
                             <!-- Modal -->
-                            <div class="modal fade" [attr.id]="'modal' + $index" tabindex="-1">
+                            <div class="modal fade" [attr.id]="'modal' + image.id" tabindex="-1">
                                 <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-body">

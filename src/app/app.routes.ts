@@ -12,6 +12,12 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
 import { ContactComponent } from './components/contact/contact.component';
 import { TeamComponent } from './components/team/team.component';
 import { MetodologyComponent } from './components/metodology/metodology.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FormNewsComponent } from './components/form-news/form-news.component';
+import { inject } from '@angular/core';
+import { AuthGuardService } from './services/auth-guard.service';
+import { UploadImagesComponent } from './components/upload-images/upload-images.component';
+import { FormProjectComponent } from './components/form-project/form-project.component';
 
 
 export const routes: Routes = [
@@ -27,5 +33,9 @@ export const routes: Routes = [
     {path: 'infraestructure', component: InfraestructureComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'team', component: TeamComponent},
-    {path: 'metodology', component: MetodologyComponent}
+    {path: 'metodology', component: MetodologyComponent},
+    {path: 'admin/dashboard', component: DashboardComponent, canActivate: [() => inject(AuthGuardService).canActivate()]},
+    {path: 'admin/form-news', component: FormNewsComponent, canActivate: [() => inject(AuthGuardService).canActivate()]},
+    {path: 'admin/form-projects', component: FormProjectComponent, canActivate: [() => inject(AuthGuardService).canActivate()]},
+    {path: 'admin/upload-image', component: UploadImagesComponent, canActivate: [() => inject(AuthGuardService).canActivate()]}
 ];
