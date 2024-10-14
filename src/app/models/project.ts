@@ -14,8 +14,10 @@ export interface Project {
     action: string;
     budget: string;
     video?: any;
+    link?: string;
     imageIds: number[];
     categoryIds: number[];
+    serviceIds: number[];
     [key: string]: any;
 
 }

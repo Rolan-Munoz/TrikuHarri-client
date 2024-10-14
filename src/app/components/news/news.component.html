@@ -20,6 +20,9 @@
                                     <div class="news-text">
                                         <h2>{{ newItem['title_' + languageService.language.value]}}</h2>
                                         <p>Publicado el: {{ newItem['formattedDate'] }}</p>
+                                        @if (newItem['link']) {
+                                            <a [href]="newItem['link']" target="_blank">Ver más</a>
+                                        }
                                         <div class="news-description" [class.expanded]="newItem['expanded']">
                                             <p>{{ newItem['content_' + languageService.language.value] }}</p>
                                         </div>

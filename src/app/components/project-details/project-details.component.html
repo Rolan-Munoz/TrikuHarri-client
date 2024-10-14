@@ -15,6 +15,9 @@
                         <div class="main-content">
                             <h2>{{project['title_' + languageService.language.value]}}</h2>
                             <p>{{project['description_' + languageService.language.value]}}</p>
+                            @if (project['link']) {
+                                <a [href]="project['link']" target="_blank">Ver más</a>
+                            }
                             <p>{{project['content_' + languageService.language.value]}}</p>
                             @if(project.video) {
                                 <video [src]="'data:video/mp4;base64,' + project.video" controls></video>

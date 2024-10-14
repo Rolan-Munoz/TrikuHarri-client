@@ -9,7 +9,7 @@
 // The changeLanguage method is used to change the language of the application. It uses the language service to change the language of the application.
 
 import { Component} from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LanguageServiceService } from '../../services/language-service.service';
 import { TextHeaderComponent } from "../text-header/text-header.component";
 import { WaterComponent } from "../../components/categories/water/water.component";
@@ -21,6 +21,12 @@ import { InfraestructureComponent } from "../../components/categories/infraestru
 import { CommonModule } from '@angular/common';
 import { TeamComponent } from "../../components/team/team.component";
 import { MetodologyComponent } from "../../components/metodology/metodology.component";
+import { Service01Component } from "../../components/services/service01/service01.component";
+import { Service06Component } from "../../components/services/service06/service06.component";
+import { Service05Component } from "../../components/services/service05/service05.component";
+import { Service04Component } from "../../components/services/service04/service04.component";
+import { Service03Component } from "../../components/services/service03/service03.component";
+import { Service02Component } from "../../components/services/service02/service02.component";
 
 @Component({
     selector: 'app-navbar',
@@ -28,7 +34,7 @@ import { MetodologyComponent } from "../../components/metodology/metodology.comp
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css',
     imports: [TextHeaderComponent, RouterModule, WaterComponent, EnergyComponent, EnvironmentComponent,
-        UrbanismComponent, MobilityComponent, InfraestructureComponent, CommonModule, TeamComponent, MetodologyComponent]
+    UrbanismComponent, MobilityComponent, InfraestructureComponent, CommonModule, TeamComponent, MetodologyComponent, Service01Component, Service06Component, Service05Component, Service04Component, Service03Component, Service02Component]
 })
 export class NavbarComponent {
     
@@ -38,10 +44,14 @@ translations: { [x: string]: string; } = {};
 selectedView: string = '';
 
 
-constructor(private languageService: LanguageServiceService) {
+constructor(private languageService: LanguageServiceService, public router: Router) {
 this.languageService.getTranslation().subscribe((translations: { [x: string]: string; }) => {
     this.translations = translations;
 });
+}
+
+onViewChange(view: string) {
+    this.selectedView = view;
 }
 
 changeLanguage(language: string) {

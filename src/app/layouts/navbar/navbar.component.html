@@ -17,6 +17,9 @@
                 </div>
             </div>
         </div>
+
+        
+
         @if (selectedView === '' ) {
             @defer {
                 <app-text-header></app-text-header> 
@@ -62,6 +65,48 @@
             <div class="category-container">
                 <h2 class="category-h2">{{ translations['METHODOLOGY'] }}</h2>
                 <p class="category-text">{{ translations['METHODOLOGY_TEXT'] }}</p>
+            </div>
+        }
+
+        @if (selectedView === 'SERVICE01') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['SERVICE_1'] }}</h2>
+                <p class="category-text">{{ translations['SERVICE_1_TEXT'] }}</p>
+            </div>
+        }
+
+        @if (selectedView === 'SERVICE02') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['SERVICE_2'] }}</h2>
+                <p class="category-text">{{ translations['SERVICE_2_TEXT'] }}</p>
+            </div>
+        }
+
+        @if (selectedView === 'SERVICE03') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['SERVICE_3'] }}</h2>
+                <p class="category-text">{{ translations['SERVICE_3_TEXT'] }}</p>
+            </div>
+        }
+
+        @if (selectedView === 'SERVICE04') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['SERVICE_4'] }}</h2>
+                <p class="category-text">{{ translations['SERVICE_4_TEXT'] }}</p>
+            </div>
+        }
+
+        @if (selectedView === 'SERVICE05') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['SERVICE_5'] }}</h2>
+                <p class="category-text">{{ translations['SERVICE_5_TEXT'] }}</p>
+            </div>
+        }
+
+        @if (selectedView === 'SERVICE06') {
+            <div class="category-container">
+                <h2 class="category-h2">{{ translations['SERVICE_6'] }}</h2>
+                <p class="category-text">{{ translations['SERVICE_6_TEXT'] }}</p>
             </div>
         }
         
@@ -130,7 +175,43 @@
             }
             @if (selectedView === 'METHODOLOGY') {
                 <div #componentContainer  class="component-container">
-                    <app-metodology></app-metodology>
+                    <app-metodology (viewChange)="onViewChange($event)"></app-metodology>
+                </div>
+            } 
+
+            @if (selectedView === 'SERVICE01') {
+                <div #componentContainer  class="component-container">
+                    <app-service01></app-service01>
+                </div>
+            }
+
+            @if (selectedView === 'SERVICE02') {
+                <div #componentContainer  class="component-container">
+                    <app-service02></app-service02>
+                </div>
+            }
+
+            @if (selectedView === 'SERVICE03') {
+                <div #componentContainer  class="component-container">
+                    <app-service03></app-service03>
+                </div>
+            }
+
+            @if (selectedView === 'SERVICE04') {
+                <div #componentContainer  class="component-container">
+                    <app-service04></app-service04>
+                </div>
+            }
+
+            @if (selectedView === 'SERVICE05') {
+                <div #componentContainer  class="component-container">
+                    <app-service05></app-service05>
+                </div>
+            }
+
+            @if (selectedView === 'SERVICE06') {
+                <div #componentContainer  class="component-container">
+                    <app-service06></app-service06>
                 </div>
             }
     </div>

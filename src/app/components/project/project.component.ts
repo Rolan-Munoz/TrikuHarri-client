@@ -23,14 +23,20 @@ export class ProjectComponent implements OnInit {
   currentLanguage: string;
   urlDeImagen: string | undefined;
   @Input() categoryId: number | undefined;
+  @Input() serviceId: number | undefined;
+  @Input() filterBy: 'category' | 'service' = 'category'; // Nueva propiedad
 
   constructor(private projectService: ProjectsService, public languageService: LanguageServiceService, private router: Router) {
     this.currentLanguage = this.languageService.language.value;
   }
 
   ngOnInit(): void {
-    if (this.categoryId) {
+    if (this.filterBy === 'category' && this.categoryId !== undefined) {
       this.projectService.getAllProjectsByCategory(this.categoryId).subscribe((projects: Project[]) => {
+        this.projects = projects;
+      });
+    } else if (this.filterBy === 'service' && this.serviceId !== undefined) {
+      this.projectService.getAllProjectsByService(this.serviceId).subscribe((projects: Project[]) => {
         this.projects = projects;
       });
     }
@@ -40,3 +46,4 @@ export class ProjectComponent implements OnInit {
     return project.id;
   }
 }
+

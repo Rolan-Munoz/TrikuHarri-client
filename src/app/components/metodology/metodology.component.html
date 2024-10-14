@@ -1,50 +1,66 @@
 <main>
     <div class="card">
-        <div class="card-front">
-            <h2>{{ translations['SERVICE_1'] }}</h2>
-        </div>
-        <div class="card-back">
-            <p>{{ translations['SERVICE_1_TEXT'] }}</p>
-        </div>
+        <a (click)="changeView('SERVICE01')" [routerLink]="['/service01']" routerLinkActive="active">
+            <div class="card-front">
+                <h2>{{ translations['SERVICE_1'] }}</h2>
+            </div>
+            <div class="card-back">
+                <p>{{ translations['SERVICE_1_TEXT'] }}</p>
+            </div>
+        </a>
     </div>
+
     <div class="card">
-        <div class="card-front">
-            <h2>{{ translations['SERVICE_2']}}</h2>
-        </div>
-        <div class="card-back">
-            <p>{{ translations['SERVICE_2_TEXT'] }}</p>
-        </div>
+        <a (click)="changeView('SERVICE02')" [routerLink]="['/service02']" routerLinkActive="active">
+            <div class="card-front">
+                <h2>{{ translations['SERVICE_2']}}</h2>
+            </div>
+            <div class="card-back">
+                <p>{{ translations['SERVICE_2_TEXT'] }}</p>
+            </div>
+        </a>
     </div>
+
     <div class="card">
-        <div class="card-front">
-            <h2>{{ translations['SERVICE_3'] }}</h2>
-        </div>
-        <div class="card-back">
-            <p>{{ translations['SERVICE_3_TEXT'] }}</p>
-        </div>
+        <a (click)="changeView('SERVICE03')" [routerLink]="['/service03']" routerLinkActive="active">
+            <div class="card-front">
+                <h2>{{ translations['SERVICE_3']}}</h2>
+            </div>
+            <div class="card-back">
+                <p>{{ translations['SERVICE_3_TEXT'] }}</p>
+            </div>
+        </a>
     </div>
+
     <div class="card">
-        <div class="card-front">
-            <h2>{{ translations['SERVICE_4'] }}</h2>
-        </div>
-        <div class="card-back">
-            <p>{{ translations['SERVICE_4_TEXT'] }}</p>
-        </div>
+        <a (click)="changeView('SERVICE04')" [routerLink]="['/service04']" routerLinkActive="active">
+            <div class="card-front">
+                <h2>{{ translations['SERVICE_4']}}</h2>
+            </div>
+            <div class="card-back">
+                <p>{{ translations['SERVICE_4_TEXT'] }}</p>
+            </div>
+        </a>
     </div>
+
     <div class="card">
-        <div class="card-front">
-            <h2>{{ translations['SERVICE_5'] }}</h2>
-        </div>
-        <div class="card-back">
-            <p>{{ translations['SERVICE_5_TEXT'] }}</p>
-        </div>
+        <a (click)="changeView('SERVICE05')" [routerLink]="['/service05']" routerLinkActive="active">
+            <div class="card-front">
+                <h2>{{ translations['SERVICE_5']}}</h2>
+            </div>
+            <div class="card-back">
+                <p>{{ translations['SERVICE_5_TEXT'] }}</p>
+            </div>
+        </a>
     </div>
+
     <div class="card">
-        <div class="card-front">
-            <h2>{{ translations['SERVICE_6'] }}</h2>
-        </div>
-        <div class="card-back">
-            <p>{{ translations['SERVICE_6_TEXT'] }}</p>
-        </div>
+        <a (click)="changeView('SERVICE06')" [routerLink]="['/service06']" routerLinkActive="active">
+            <div class="card-front">
+                <h2>{{ translations['SERVICE_6']}}</h2>
+            </div>
+            <div class="card-back">
+                <p>{{ translations['SERVICE_6_TEXT'] }}</p>
+            </div>
+        </a>
     </div>
-</main>

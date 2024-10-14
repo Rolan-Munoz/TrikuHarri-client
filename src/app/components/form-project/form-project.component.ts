@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category } from '../../models/category';
+import { Servicio } from '../../models/servicio';
 import { ProjectsService } from '../../services/projects.service';
 import { UploadImagesComponent } from "../upload-images/upload-images.component";
 
@@ -18,6 +19,7 @@ export class FormProjectComponent implements OnInit {
   projectForm: FormGroup;
   createdProjectId: number | null = null;
   categories: Category[] = [];
+  services: Servicio[] = [];
   videoBase64: string | null = null;
 
   constructor(private formBuilder: FormBuilder, private projectsService: ProjectsService, private http: HttpClient, private router: Router) {
@@ -35,12 +37,15 @@ export class FormProjectComponent implements OnInit {
       client: ['', [Validators.required]],
       action: ['', [Validators.required]],
       budget: ['', [Validators.required]],
-      categories: this.formBuilder.array([])
+      link: [''],
+      categories: this.formBuilder.array([]),
+      services: this.formBuilder.array([])
     });
   }
 
   ngOnInit(): void {
     this.loadCategories();
+    this.loadServices();
   }
 
   loadCategories(): void {
@@ -50,8 +55,19 @@ export class FormProjectComponent implements OnInit {
     });
   }
 
+  loadServices(): void {
+    this.projectsService.getAllServices().subscribe(services => {
+      this.services = services;
+      this.services.forEach(() => this.servicesArray.push(this.formBuilder.control(false)));
+    });
+  }
+
   get categoriesArray(): FormArray {
     return this.projectForm.get('categories') as FormArray;
+  }
+
+  get servicesArray(): FormArray {
+    return this.projectForm.get('services') as FormArray;
   }
 
   onFileChange(event: Event) {
@@ -74,7 +90,12 @@ export class FormProjectComponent implements OnInit {
         .filter((_, index) => this.categoriesArray.at(index).value)
         .map(category => category.id);
 
+      project.serviceIds = this.services
+        .filter((_, index) => this.servicesArray.at(index).value)
+        .map(service => service.id);
+
       console.log('Selected category IDs:', project.categoryIds); // Verifica los IDs de las categorías
+      console.log('Selected service IDs:', project.serviceIds); // Verifica los IDs de los servicios
 
       if (this.videoBase64) {
         project.video = this.videoBase64;

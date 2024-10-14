@@ -26,6 +26,7 @@ export class FormNewsComponent {
       content_es: ['', [Validators.required]],
       content_en: ['', [Validators.required]],
       content_eus: ['', [Validators.required]],
+      link: [''],
       date: ['', [Validators.required]]
     });
   }

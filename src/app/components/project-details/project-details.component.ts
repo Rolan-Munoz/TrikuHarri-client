@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Subject } from 'rxjs';
 import { Project } from '../../models/project';
 import { LanguageServiceService } from '../../services/language-service.service';
@@ -17,7 +17,7 @@ import { ImagesComponent } from '../images/images/images.component';
     standalone: true,
     templateUrl: './project-details.component.html',
     styleUrl: './project-details.component.css',
-    imports: [AppTranslateModule, ImagesComponent]
+    imports: [AppTranslateModule, ImagesComponent, RouterModule]
 })
 export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
