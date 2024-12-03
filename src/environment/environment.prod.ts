@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    urlApi: 'https://triku.eus/api/'
+    apiUrl: 'https://triku.eus/api'
 };
