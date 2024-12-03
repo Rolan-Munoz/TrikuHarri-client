@@ -1,0 +1,43 @@
+@defer {
+    @if(showModal) {
+        <div class="modal">
+            <div class="modal-wrapper">
+                <div class="modal-content">
+                <div class="header">
+                    <img class="logo" src="../../../assets/img/logo-projects.png" alt="logo-trikuHarri-ingenieria"> 
+                    <button class="close-button" (click)="closeModal()">X</button> 
+                </div>
+                
+                @if(project) {                
+                    @defer {
+                    <app-images class="img"  [projectId]="project.id" [onlyFirstImage]="false"></app-images>
+                    <main>
+                        <div class="main-content">
+                            <h2>{{project['title_' + languageService.language.value]}}</h2>
+                            <p>{{project['description_' + languageService.language.value]}}</p>
+                            @if (project['link']) {
+                                <a [href]="project['link']" target="_blank">Ver más</a>
+                            }
+                            <p>{{project['content_' + languageService.language.value]}}</p>
+                            @if(project.video) {
+                                <video [src]="'data:video/mp4;base64,' + project.video" controls></video>
+                            }
+                        </div>
+                        <div class="aside">
+                            <p>Fecha:</p>
+                            {{project.date}}
+                            <p>{{translations['CLIENT_PROJECTDETAILS']}}</p>
+                            <p>{{project.client}}</p>
+                            <p>{{translations['ACTION_PROJECTDETAILS']}}</p>
+                            <p>{{project.action}}</p>
+                            <p>{{translations['BUDGET_PROJECTDETAILS']}}</p>
+                            <p>{{project.budget}}</p>
+                        </div>
+                    </main>
+                    }
+                }
+                </div>
+            </div>
+        </div>
+    }
+    }

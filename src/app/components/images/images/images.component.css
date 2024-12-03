@@ -1,0 +1,36 @@
+.carousel-item {
+    height: 15%;
+    object-fit: cover; /* Esto asegura que las imágenes se redimensionen correctamente */
+}
+
+.carousel-container {
+    width: 60%;
+    margin: auto;
+}
+
+
+@media (max-width: 968px) {
+    .carousel-container {
+        width: 100%;
+    }
+    
+}
+
+.modal.fade {
+    z-index: 10000; /* Asegúrate de que este valor es mayor que el z-index del modal del proyecto */
+    background-color: rgba(26, 6, 6, 0.596); /* Fondo semitransparente */
+}
+
+
+
+.modal-content {
+    background-color: transparent; /* Fondo transparente */
+    border: none;
+}
+
+.modal-body {
+    display: flex; /* Centra la imagen en la pantalla */
+    justify-content: center;
+    align-items: center;
+}
+

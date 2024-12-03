@@ -7,6 +7,7 @@ export interface News {
     content_en: string;
     content_eus: string;
     date: Date;
-    image?: any;
+    link?: string;
+    imageIds: number[];
     [key: string]: any;
 }

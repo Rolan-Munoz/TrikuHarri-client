@@ -1,9 +1,10 @@
 
-@if(router.url !== '/login' && router.url !== '/dashboard') {
+@if(router.url !== '/login' && router.url !== '/admin/dashboard' && router.url !== '/admin/form-news' && router.url !== '/admin/form-projects') {
     <app-navbar></app-navbar>
 }
 @if(router.url !== '/water' && router.url !== '/energy' && router.url !== '/environment' && router.url !== '/urbanism'
-    && router.url !== '/mobility' && router.url !== '/infraestructure') {
+    && router.url !== '/mobility' && router.url !== '/infraestructure' && router.url !== '/team' && router.url !== '/metodology' && router.url !== '/service01'
+    && router.url !== '/service02' && router.url !== '/service03'&& router.url !== '/service04' && router.url !== '/service05' && router.url !== '/service06') {
     <div>
         <router-outlet></router-outlet>
     </div>

@@ -22,9 +22,10 @@ export class NewsService {
   }
   
 
-  createNew(newsItem: News): Observable<News> {
+  createNew(newsItem: Omit<News, 'id'>): Observable<News> {
     return this.http.post<News>(`${this.apiUrl}/save`, newsItem);
   }
+  
   
   updateNew(newsItem: News): Observable<News> {
     return this.http.put<News>(`${this.apiUrl}/${newsItem.id}/update`, newsItem);

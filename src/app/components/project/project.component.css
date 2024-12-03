@@ -1,11 +1,16 @@
 .container-fluid {
   display: flex;
-  flex-wrap: wrap; /* Añade esta línea */
+  flex-direction: column; /* Cambia el flujo a columna */
   width: 100%;
   margin: 0 auto;
   padding: 0;
   height: 100vh;
   overflow-y: auto;
+}
+
+.project-container {
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  margin-bottom: 10px; /* Espacio entre los elementos, ajusta según sea necesario */
 }
 
 .card-title-overlay {
@@ -25,13 +30,12 @@
 
 .card-image-overlay {
   position: relative;
-  width: 100%; /* Cada imagen ocupa todo el ancho del contenedor */
+  width: 100%;
   height: 400px; 
   padding: 0;
   overflow: hidden;
   cursor: pointer;
 }
-
 
 .card-image-overlay::after {
   content: "";
@@ -40,26 +44,30 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
-  transition: background-color 0.3s ease; /* Transición suave */
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
 }
 
 .card-image-overlay:hover::after {
-  background-color: rgba(0, 0, 0, 0.5); /* Sombreado al pasar el cursor */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-image-overlay .card-img img {
+  width: auto; /* Permite que la imagen mantenga su proporción */
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: 100%; /* Asegura que la imagen ocupe toda la altura */
+  object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
+  display: block; /* Cambia el comportamiento a bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  position: relative; /* Asegura que la imagen se posicione correctamente */
 }
 
 @media(max-width: 760px) {
   .card-image-overlay {
-    height: 400px;
+    height: 300px;
   }
   .card-title-overlay {
     padding: 15px;
     font-size: 15px;
   }
-  .container-fluid {
-    align-items: flex-start;
-  }
-
 }
-
-

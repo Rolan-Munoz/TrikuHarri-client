@@ -1,8 +1,11 @@
+
 <div class="text">
     <p>
         @if (
             MAIN_TEXT
-        ) { {{MAIN_TEXT | translate}}
+        ) { @defer {
+                {{MAIN_TEXT | translate}}
+            }
     }
     </p>
 </div>

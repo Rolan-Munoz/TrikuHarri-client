@@ -1,9 +1,47 @@
-
-
-@if (onlyFirstImage && images && images.length) {
-    <img [src]="'data:image/jpeg;base64,' + images[0].image"  alt="Project image">
-} @else {
-    @for (image of images; track image.id) {
-        <img [src]="'data:image/jpeg;base64,' + image.image"  alt="Project image">
+@defer {
+    @if (onlyFirstImage && images && images.length) {
+        @defer {
+            <img [src]="'data:image/jpeg;base64,' + images[0].image" alt="Project image" data-bs-toggle="modal" [attr.data-bs-target]="'#modal' + 0">
+            <!-- Modal -->
+            <div class="modal fade" id="modal0" tabindex="-1">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img [src]="'data:image/jpeg;base64,' + images[0].image" class="img-fluid" alt="Project image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    } @else {
+        <div id="carouselExampleControls" class="carousel slide carousel-container" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @for ( image of images; track image.id) {
+                    @defer {
+                        <div class="carousel-item" [class.active]="($index === 0)">
+                            <img [src]="'data:image/jpeg;base64,' + image.image" class="d-block w-100 carousel-image" alt="Project image" data-bs-toggle="modal" [attr.data-bs-target]="'#modal' + image.id">
+                            <!-- Modal -->
+                            <div class="modal fade" [attr.id]="'modal' + image.id" tabindex="-1">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <img [src]="'data:image/jpeg;base64,' + image.image" class="img-fluid" alt="Project image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     }
 }

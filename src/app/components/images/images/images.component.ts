@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Image } from '../../../models/image';
 import { ImageService } from '../../../services/image.service';
-
 @Component({
   selector: 'app-images',
   standalone: true,
@@ -12,18 +12,26 @@ import { ImageService } from '../../../services/image.service';
 export class ImagesComponent implements OnInit {
   @Input() projectId?: number;
   @Input() onlyFirstImage? = false;
-  @Output() backgroundImageUrl = new EventEmitter<string>(); // Nuevo EventEmitter
+  @Output() backgroundImageUrl = new EventEmitter<string>();
   images: Image[] = [];
 
   constructor(private imageService: ImageService) {}
 
   ngOnInit(): void {
+    this.loadImages();
+  }
+
+  ngOnChanges(): void {
+    this.loadImages();
+  }
+
+  private loadImages(): void {
     if (this.projectId) {
       this.imageService.getImagesByProjectId(this.projectId).subscribe(
         (images: Image[]) => {
+          console.log('Imágenes cargadas:', images);
           this.images = images;
-          if (this.onlyFirstImage && images.length > 0) {
-            // Emite la URL de la primera imagen
+          if (this.onlyFirstImage && images && images.length > 0) {
             this.backgroundImageUrl.emit('data:image/jpeg;base64,' + images[0].image);
           }
         },
@@ -31,6 +39,8 @@ export class ImagesComponent implements OnInit {
           console.error('Error al obtener las imágenes:', error);
         }
       );
+    } else {
+      console.error('projectId no es válido');
     }
   }
 }

@@ -1,0 +1,18 @@
+<form [formGroup]="imageForm">
+    <div formArrayName="imageIds">
+        @for (imageId of imageIds.controls; track $index) {
+        <div [formGroupName]="$index">
+            @if (imageUrls[$index]) {
+            <img [src]="imageUrls[$index]" alt="Image preview" style="width: 100px; height: 100px; object-fit: cover;">
+            } @else {
+            <input formControlName="0" readonly>
+            }
+        </div>
+        }
+        @empty {
+        <p>No hay imágenes para mostrar.</p>
+        }
+    </div>
+    <input type="file" (change)="addImage($event)">
+<button type="submit" (click)="navigate()" [disabled]="!imageForm.valid">Subir Imágenes</button>
+</form>
